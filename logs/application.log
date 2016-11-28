@@ -1,0 +1,4 @@
+2016-11-28 12:01:58,190 [INFO] from application in ForkJoinPool-1-worker-3 - Creating Pool for datasource 'default'
+2016-11-28 12:01:58,625 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-3 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks
+2016-11-28 12:02:00,177 [INFO] from play.api.Play in ForkJoinPool-1-worker-3 - Application started (Dev)
+2016-11-28 12:02:11,877 [INFO] from application in pool-4-thread-2 - Shutting down connection pool.

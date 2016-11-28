@@ -1,0 +1,14 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">FeedPicks</a>
+	    </div>
+	    <div id="navbar" class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav">
+	        @if(models.User.isLogin) {
+	          <li><a href="@routes.AuthController.logout()">ログアウト</a></li>
+	        }else{
+	          <li><a href="@routes.AuthController.login()">ログイン</a></li>
+	        }
+	      </ul>
+	    </div>
+</nav>

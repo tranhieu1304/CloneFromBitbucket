@@ -1,0 +1,49 @@
+@(form: Form[models.User])
+
+@main("新規作成") {
+	<h3>アカウント登録</h3>
+	<h4>無料でご利用いただけます</h4>
+	
+	<div class="form-create">
+		@helper.form(action = routes.UserController.create(), 'method -> "POST") {
+			@(helper.inputText (
+				field = form("email"),
+				'_label -> "メールアドレス",
+				'placeholder -> "xxx@xxx"
+			))
+			
+			@(helper.inputPassword (
+				field = form("password"),
+				'_label -> "パスワード",
+				'placeholder -> "12345678"
+			))
+			
+			@(helper.inputPassword(
+				field = form("passwordConf"),
+				'_label -> "パスワード（確認）",
+				'placeholder -> "12345678"
+			))
+			
+			@(helper.inputText(
+				field = form("name"),
+				'_label -> "名前",
+				'placeholder -> "名前"
+			))
+			
+			@(helper.inputDate(
+				field = form("birthday"),
+				'_label -> "誕生日",
+				'placeholder -> "年月日"
+			))
+			
+			@(helper.inputRadioGroup (
+				field = form("sex"),
+				options = Seq("male" -> "男性",
+							"female" -> "女性"),
+				'_label -> "性別"
+			))
+			
+			<button type="submit">新規登録</button>
+		}
+	</div>
+}
