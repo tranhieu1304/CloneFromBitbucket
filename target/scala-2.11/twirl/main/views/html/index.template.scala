@@ -53,8 +53,8 @@ Seq[Any](format.raw/*1.19*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 24 15:59:02 JST 2016
-                  SOURCE: /Users/mac_tshiono/Development/java_Play/feedpicks-identity/app/views/index.scala.html
+                  DATE: Mon Nov 28 10:58:38 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks-identity/app/views/index.scala.html
                   HASH: 342e5080523ac6108ad072d8e06dea1e2a50a09d
                   MATRIX: 745->1|857->18|884->20|914->42|953->44|981->46|1010->50|1037->57|1072->63
                   LINES: 27->1|32->1|33->2|33->2|33->2|34->3|34->3|34->3|35->4

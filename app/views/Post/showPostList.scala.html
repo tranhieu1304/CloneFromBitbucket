@@ -1,0 +1,41 @@
+@(posts: List[models.Post])
+
+@main("FeedPicks") {
+	<div>
+	    <div class="container">
+	        <div class="form-inline">
+	            <div class="input-group col-sm-6">
+	                  <label>
+	                      <a class="btn btn-success" href="@routes.PostController.addPost">投稿</a>
+	                  </label>
+	            </div>
+	        </div>
+	        <div></div>
+	
+	        <table class="table table-bordered table-striped" id="productTable">
+	            <thead>
+		            <tr>
+		                <th>Id</th>
+		                <th>投稿日</th>
+		                <th>投稿者</th>
+		                <th>記事一覧</th>
+		                <th>遷移</th>
+		            </tr>
+	            </thead>
+	            <tbody>
+		            @for(post <- posts){
+			            <tr id="@post.id">
+			                <td>@post.id</td>
+			                <td>@post.createDate</td>
+			                <th>@post.user.name</th>
+			                <td>
+			                	<a class="" href="@routes.PostController.viewPostDetail(post.id)">@post.title</a>
+			                </td>
+			                <td><a class="btn btn-success" href="">Vist Website</a></td>
+			            </tr>　
+		            }
+	            </tbody>
+	        </table>
+	    </div>
+	</div>
+}

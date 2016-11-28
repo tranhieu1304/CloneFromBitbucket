@@ -4,7 +4,7 @@
 		module="feedpicks-identity-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20161121193353"
+		publication="20161124142606"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

@@ -49,7 +49,7 @@ Seq[Any](format.raw/*1.27*/("""
 				'placeholder -> "12345678"
 			))),format.raw/*19.6*/("""
 			
-			"""),_display_(/*21.5*/(helper.inputPassword(
+			"""),_display_(/*21.5*/(helper.inputText(
 				field = form("passwordConf"),
 				'_label -> "パスワード（確認）",
 				'placeholder -> "12345678"
@@ -69,8 +69,8 @@ Seq[Any](format.raw/*1.27*/("""
 			
 			"""),_display_(/*39.5*/(helper.inputRadioGroup (
 				field = form("sex"),
-				options = Seq("male" -> "男性",
-							"female" -> "女性"),
+				options = Seq("0" -> "男性",
+							"1" -> "女性"),
 				'_label -> "性別"
 			))),format.raw/*44.6*/("""
 			
@@ -98,10 +98,10 @@ Seq[Any](format.raw/*1.27*/("""
 object add extends add_Scope0.add
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 24 17:49:22 JST 2016
-                  SOURCE: /Users/mac_tshiono/Development/java_Play/feedpicks-identity/app/views/User/add.scala.html
-                  HASH: 0b002a2c992c5800db4ef8ca4053a0f169be3035
-                  MATRIX: 757->1|877->26|905->29|925->41|964->43|992->45|1089->117|1103->123|1176->188|1215->190|1245->195|1373->303|1408->312|1542->426|1577->435|1718->556|1753->565|1869->661|1904->670|2026->772|2061->781|2217->917|2252->925|2321->964|2350->966|2388->974
+                  DATE: Mon Nov 28 10:58:38 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks-identity/app/views/User/add.scala.html
+                  HASH: 27662b601994d8d7f66a75a13e361a245c53f33d
+                  MATRIX: 757->1|877->26|905->29|925->41|964->43|992->45|1089->117|1103->123|1176->188|1215->190|1245->195|1373->303|1408->312|1542->426|1577->435|1714->552|1749->561|1865->657|1900->666|2022->768|2057->777|2205->905|2240->913|2309->952|2338->954|2376->962
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|39->8|39->8|39->8|39->8|40->9|44->13|46->15|50->19|52->21|56->25|58->27|62->31|64->33|68->37|70->39|75->44|77->46|78->47|79->48|80->49
                   -- GENERATED --
               */

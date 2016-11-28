@@ -2,8 +2,21 @@
 # An example controller showing a sample home page
 GET     /                           	controllers.Application.index
 
+#For Post--------------------------------------------------------------------
+GET     /listPost                       controllers.PostController.showAllPost
+GET    /addPost							controllers.PostController.addPost
+POST   /createPost						controllers.PostController.createPost
+GET   /createPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
+
+#For Comment--------------------------------------------------------------------
+GET   /addComment/:postId               controllers.CommentController.createComment(postId : Long)
+
+
+#For User--------------------------------------------------------------------
 GET     /add                            controllers.UserController.add
 POST    /create                         controllers.UserController.create
+
+#For Authenticate-------------------------------------------------------------
 GET     /login                          controllers.AuthController.login
 POST    /auth                           controllers.AuthController.auth
 GET     /logout                         controllers.AuthController.logout

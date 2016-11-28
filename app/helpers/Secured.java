@@ -16,10 +16,6 @@ public class Secured extends Security.Authenticator {
     @Override
     public Result onUnauthorized(Context ctx) {
         String returnUrl = ctx.request().uri();
-        if (returnUrl == null) {
-//            returnUrl = routes.LabelC.index().url();
-        	returnUrl = null;
-        }
         ctx.session().put(Constant.SESSION_RETURN_URL, returnUrl);
         return redirect(routes.AuthController.login());
     }
