@@ -1,0 +1,48 @@
+@(formPost: Form[models.Post], posts: List[models.Post], postTitle : String)
+
+@main("New Post") {
+	<div>
+	    <div class="container">
+	        <div class="form-inline">
+	            <div class="input-group col-sm-6">
+					@helper.form(action = routes.PostController.createPost(), 'method -> "POST") {
+						@(helper.inputText (
+							field = formPost("url"),
+							'_label -> "Url",
+							'placeholder -> "Enter Url"
+						))
+						<button type="submit">投稿</button>
+					}
+	            </div>
+	        </div>
+	        <div></div>
+	
+	        <table class="table table-bordered table-striped" id="productTable">
+	            <thead>
+		            <tr>
+		                <th>Id</th>
+		                <th>投稿日</th>
+		                <th>記事一覧</th>
+		                <th>Action</th>
+		            </tr>
+	            </thead>
+	            <tbody>
+		            @for(post <- posts){
+			            <tr id="@post.id">
+			                <td>@post.id</td>
+			                <td>@post.createDate</td>
+			                <td>
+			               	 	<a class="" href="@routes.PostController.viewPostDetail(post.id)">@post.title</a>
+			                </td>
+			                <td>
+			                	<a class="btn btn-danger" href="">削除</a>
+			                	<a class="btn btn-success" href="">編集</a>
+			                </td>
+			            </tr>　
+		            }
+	            </tbody>
+	        </table>
+	    </div>
+	</div>
+	<a class="#" href="@routes.PostController.showAllPost">All Post </a>
+}

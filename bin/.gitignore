@@ -1,2 +1,14 @@
+/ApplicationTest.class
+/IntegrationTest.class
+/application.conf
+/constants/
 /controllers/
+/evolutions/
+/filters/
+/helpers/
+/logback.xml
+/models/
+/routes
+/services/
+/util/
 /views/

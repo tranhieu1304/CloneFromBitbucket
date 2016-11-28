@@ -30,11 +30,8 @@ public class AuthController extends Controller {
 		if (f.hasErrors()) {
 			return badRequest(views.html.Author.login.render(f));
 		} else {
-
 			session(Constant.SESSION_USER_NAME, f.get().name);
 			String returnUrl = ctx().session().get(Constant.SESSION_RETURN_URL);
-
-
 			if (returnUrl == null
 					|| returnUrl.equals("")
 					|| returnUrl.equals(routes.AuthController.login().absoluteURL(

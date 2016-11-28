@@ -18,7 +18,7 @@
 				'placeholder -> "12345678"
 			))
 			
-			@(helper.inputPassword(
+			@(helper.inputText(
 				field = form("passwordConf"),
 				'_label -> "パスワード（確認）",
 				'placeholder -> "12345678"
@@ -38,8 +38,8 @@
 			
 			@(helper.inputRadioGroup (
 				field = form("sex"),
-				options = Seq("male" -> "男性",
-							"female" -> "女性"),
+				options = Seq("0" -> "男性",
+							"1" -> "女性"),
 				'_label -> "性別"
 			))
 			

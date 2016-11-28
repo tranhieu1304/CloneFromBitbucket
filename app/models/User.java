@@ -8,14 +8,17 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.avaje.ebean.Model;
-import com.avaje.ebean.Model.Finder;
+import com.avaje.ebean.annotation.CreatedTimestamp;
 
 import constants.Constant;
 import play.data.validation.Constraints;
@@ -39,25 +42,44 @@ public class User extends Model {
 	@Column(name = "password", nullable = false, length = 1024)
 	public String password;
 
+	@Column(name = "passwordConf", nullable = false, length = 1024)
+	public String passwordConf;
+
+	@Column(name = "email", nullable = false, length = 1024)
+	public String email;
+
 	@Constraints.Required
 	@Column(name = "sex")
-	public String sex;
+	// 0 = male, 1 = female, 2 = others
+	public int sex;
 
 	@Column(name = "birthday")
-	// @CreatedTimestamp
+	@CreatedTimestamp
 	public java.util.Date birthday;
 
-	@Column(name = "height")
-	public Long height;
+	@Column(name = "createDate")
+	@CreatedTimestamp
+	public java.util.Date createDate = new Date();
 
-	@Column(name = "bloodType")
-	public String bloodType;
+	@Column(name = "modifiedDate")
+	@CreatedTimestamp
+	public java.util.Date modifiedDate;
 
 	@Column(name = "isDelete")
 	public boolean isDelete = false;
 
+	// Relationship
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	public List<Post> posts;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	public List<Comment> comments;
+
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
+	public List<Favorite> favorites;
+
 	private static Finder<Long, User> find = new Finder<>(User.class);
-	
+
 	public void save() {
 
 		if (this.birthday == null) {
@@ -100,8 +122,20 @@ public class User extends Model {
 		return Http.Context.current().session().get(Constant.SESSION_USER_NAME) != null;
 	}
 
+	public static String userName() {
+		String userName = Http.Context.current().session().get(Constant.SESSION_USER_NAME);
+		if (isLogin()) {
+			return userName;
+		} else
+			return "";
+	}
+
 	public static User findById(long id) {
 		return find.where().eq("id", id).findUnique();
+	}
+
+	public static User findByName(String userName) {
+		return find.where().eq("name", userName).findUnique();
 	}
 
 	public static User findByNameAndPassword(String name, String password) {

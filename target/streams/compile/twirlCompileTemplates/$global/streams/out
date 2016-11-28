@@ -1,4 +1,0 @@
-[0m[[31merror[0m] [0m/Users/mac_tshiono/Development/java_Play/feedpicks-identity/app/views/common/header.scala.html:8: Not parsed?[0m
-[0m[[31merror[0m] [0m	        }else{[0m
-[0m[[31merror[0m] [0m	        ^[0m
-[0m[[31merror[0m] [0m(compile:[31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

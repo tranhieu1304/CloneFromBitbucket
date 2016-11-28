@@ -1,7 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/application.conf,/Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/evolutions,/Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/scala-2.11/classes/evolutions)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/logback.xml,/Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/routes,/Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/evolutions/default,/Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/scala-2.11/classes/evolutions/default)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/evolutions/default/1.sql,/Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/scala-2.11/classes/evolutions/default/1.sql)[0m
