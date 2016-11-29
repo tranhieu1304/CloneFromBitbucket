@@ -3,6 +3,7 @@
  */
 package controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.inject.Inject;
@@ -67,4 +68,20 @@ public class PostController extends Controller {
 		return ok(views.html.Post.postDetail.render(post, formComment));
 	}
 
+	public Result findPost() {
+		Form<FindForm> form = formFactory.form(FindForm.class).bindFromRequest();
+		List<Post> posts = new ArrayList<>();
+		
+		if (!form.hasErrors()) {
+			String keyword = form.get().keyword;
+			if (!"".equals(keyword)) {
+				posts = Post.findTitle(keyword);
+			}
+		}
+		return ok(views.html.Post.findPost.render(posts, form));
+	}
+	
+	public static class FindForm {
+		public String keyword;
+	}
 }
