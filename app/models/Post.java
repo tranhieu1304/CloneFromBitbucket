@@ -26,7 +26,7 @@ public class Post extends Model {
 	@Column(name = "url", nullable = false, length = 255)
 	public String url;
 
-	@Column(name = "title")
+	@Column(name = "title",length = 255)
 	public String title;
 
 	@Column(name = "content")

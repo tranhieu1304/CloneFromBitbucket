@@ -13,7 +13,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -75,7 +74,7 @@ public class User extends Model {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	public List<Comment> comments;
 
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	public List<Favorite> favorites;
 
 	private static Finder<Long, User> find = new Finder<>(User.class);

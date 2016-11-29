@@ -1,5 +1,9 @@
 @(posts: List[models.Post])
+	<link rel="stylesheet"  href="@routes.Assets.versioned("stylesheets/post.css")">
+@import java.lang.String;  var username = "";
+@import java.lang.Long; var favoriteId = 0l;
 
+	
 @main("FeedPicks") {
 	<div>
 	    <div class="container">
@@ -12,10 +16,10 @@
 	        </div>
 	        <div></div>
 	
-	        <table class="table table-bordered table-striped" id="productTable">
+	        <table class="table table-filter" id="productTable">
 	            <thead>
 		            <tr>
-		                <th>Id</th>
+		                <th>気に入る</th>
 		                <th>投稿日</th>
 		                <th>投稿者</th>
 		                <th>記事一覧</th>
@@ -24,8 +28,20 @@
 	            </thead>
 	            <tbody>
 		            @for(post <- posts){
-			            <tr id="@post.id">
-			                <td>@post.id</td>
+		            	@{favoriteId = 0}
+			            @for(favorite <-post.favorites){
+			            	@if(favorite.user !=null){
+				            	@if(favorite.user.name == session.get("username")){
+				            		@{favoriteId = favorite.id}
+				            	} 
+				            }
+					      }
+			            <tr id="@post.id" class="postList">
+			                <td>
+			                	<a href="javascript:;" class="star" id="@favoriteId">
+									<i class="glyphicon glyphicon-star"></i>
+								</a>
+			                </td>
 			                <td>@post.createDate</td>
 			                <th>@post.user.name</th>
 			                <td>
@@ -39,3 +55,4 @@
 	    </div>
 	</div>
 }
+<script src="@routes.Assets.versioned("javascripts/post.js")" type="text/javascript"></script>

@@ -28,15 +28,10 @@ create table comment (
 create table favorite (
   id                            bigint auto_increment not null,
   isdelete                      tinyint(1) default 0,
+  user_id                       bigint,
   post_id                       bigint,
-  createdate                    datetime(6) not null,
+  createdate1                   datetime(6) not null,
   constraint pk_favorite primary key (id)
-);
-
-create table favorite_user (
-  favorite_id                   bigint not null,
-  user_id                       bigint not null,
-  constraint pk_favorite_user primary key (favorite_id,user_id)
 );
 
 create table post (
@@ -76,14 +71,11 @@ create index ix_comment_user_id on comment (user_id);
 alter table comment add constraint fk_comment_post_id foreign key (post_id) references post (id) on delete restrict on update restrict;
 create index ix_comment_post_id on comment (post_id);
 
+alter table favorite add constraint fk_favorite_user_id foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_favorite_user_id on favorite (user_id);
+
 alter table favorite add constraint fk_favorite_post_id foreign key (post_id) references post (id) on delete restrict on update restrict;
 create index ix_favorite_post_id on favorite (post_id);
-
-alter table favorite_user add constraint fk_favorite_user_favorite foreign key (favorite_id) references favorite (id) on delete restrict on update restrict;
-create index ix_favorite_user_favorite on favorite_user (favorite_id);
-
-alter table favorite_user add constraint fk_favorite_user_user foreign key (user_id) references user (id) on delete restrict on update restrict;
-create index ix_favorite_user_user on favorite_user (user_id);
 
 alter table post add constraint fk_post_user_id foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_post_user_id on post (user_id);
@@ -103,14 +95,11 @@ drop index ix_comment_user_id on comment;
 alter table comment drop foreign key fk_comment_post_id;
 drop index ix_comment_post_id on comment;
 
+alter table favorite drop foreign key fk_favorite_user_id;
+drop index ix_favorite_user_id on favorite;
+
 alter table favorite drop foreign key fk_favorite_post_id;
 drop index ix_favorite_post_id on favorite;
-
-alter table favorite_user drop foreign key fk_favorite_user_favorite;
-drop index ix_favorite_user_favorite on favorite_user;
-
-alter table favorite_user drop foreign key fk_favorite_user_user;
-drop index ix_favorite_user_user on favorite_user;
 
 alter table post drop foreign key fk_post_user_id;
 drop index ix_post_user_id on post;
@@ -122,8 +111,6 @@ drop table if exists category_post;
 drop table if exists comment;
 
 drop table if exists favorite;
-
-drop table if exists favorite_user;
 
 drop table if exists post;
 

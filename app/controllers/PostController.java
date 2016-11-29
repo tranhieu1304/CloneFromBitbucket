@@ -3,6 +3,7 @@
  */
 package controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.google.inject.Inject;
@@ -17,6 +18,7 @@ import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
+import util.URLGetTitle;
 
 /**
  * @author mac_thieu
@@ -43,28 +45,39 @@ public class PostController extends Controller {
 	}
 
 	public Result createPost() {
-		//  This request send one more time to server >>> let fix it
+		// This request send one more time to server >>> let fix it
 		Http.Request request = Http.Context.current().request();
 		String userName = request.username();
 		User user = User.findByName(userName);
-		
+		List<Post> posts = Post.findByUser(user);
 		Form<Post> form = formFactory.form(Post.class).bindFromRequest();
 		if (!form.hasErrors()) {
 			Post post = form.get();
 			post.user = user;
-			post.title = post.url;
-			post.save();
+			try {
+				post.title = URLGetTitle.getTitle(post.url);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			if (!post.url.isEmpty()) {
+				post.save();
+				posts = Post.findByUser(user);
+			} else
+				return ok(views.html.Post.createNewPost.render(form, posts, "URLを入力してください。"));
 		} else {
 			return badRequest("Have some error");
 		}
-		List<Post> posts = Post.findByUser(user);
+
 		return ok(views.html.Post.createNewPost.render(form, posts, ""));
 	}
-	
-	public Result viewPostDetail(Long postId){
+
+	public Result viewPostDetail(Long postId) {
 		Post post = Post.findById(postId);
 		Form<Comment> formComment = formFactory.form(Comment.class);
 		return ok(views.html.Post.postDetail.render(post, formComment));
+	}
+	public void favoriedPost(){
+		
 	}
 
 }

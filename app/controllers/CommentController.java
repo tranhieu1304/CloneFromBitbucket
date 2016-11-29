@@ -3,8 +3,6 @@
  */
 package controllers;
 
-import java.util.List;
-
 import com.google.inject.Inject;
 
 import helpers.Secured;
@@ -43,7 +41,6 @@ public class CommentController extends Controller {
 		} else {
 			return badRequest("Have some error");
 		}
-		List<Post> posts = Post.findByUser(user);
 		return ok(views.html.Post.postDetail.render(post, form));
 	}
 

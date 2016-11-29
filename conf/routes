@@ -4,9 +4,10 @@ GET     /                           	controllers.Application.index
 
 #For Post--------------------------------------------------------------------
 GET     /listPost                       controllers.PostController.showAllPost
+POST    /listPost/like                  controllers.FavoriteController.favoriedPost
 GET    /addPost							controllers.PostController.addPost
 POST   /createPost						controllers.PostController.createPost
-GET   /createPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
+GET   /detailPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
 
 #For Comment--------------------------------------------------------------------
 GET   /addComment/:postId               controllers.CommentController.createComment(postId : Long)

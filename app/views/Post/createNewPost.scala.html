@@ -1,4 +1,4 @@
-@(formPost: Form[models.Post], posts: List[models.Post], postTitle : String)
+@(formPost: Form[models.Post], posts: List[models.Post], message : String)
 
 @main("New Post") {
 	<div>
@@ -11,6 +11,9 @@
 							'_label -> "Url",
 							'placeholder -> "Enter Url"
 						))
+							@if(message!=null || message != ""){
+								<p style="color:red;"> @message</p>
+							}
 						<button type="submit">投稿</button>
 					}
 	            </div>
