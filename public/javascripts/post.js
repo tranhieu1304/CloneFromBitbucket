@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
 	
-	$('.postList').each(function() {
+	$('.postList td .star').each(function() {
 		var $flag = $(this).attr('id');
 		console.log($flag+'-');
 		if ($flag > 0) {
-			$(this).childen().childen().toggleClass('star-checked');
+			$(this).toggleClass('star-checked');
 		}
 	});
 
@@ -24,9 +24,8 @@ $(document).ready(function() {
 			}
 		}).done(function(text) {
 			// something
-			alert("Selected Id :" + $selectedPostId);
 		}).fail(function(text) {
-			alert("Not found Id");
+			// something
 		});
 	});
 

@@ -7,8 +7,12 @@ GET     /listPost                       controllers.PostController.showAllPost
 POST    /listPost/like                  controllers.FavoriteController.favoriedPost
 GET    /addPost							controllers.PostController.addPost
 POST   /createPost						controllers.PostController.createPost
-GET   /find								controllers.PostController.findPost
+<<<<<<< HEAD
 GET   /detailPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
+=======
+GET   /createPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
+GET		/find							controllers.PostController.findPost
+>>>>>>> 7541fac910ba7defb78d28d1b158437b74337fc3
 
 #For Comment--------------------------------------------------------------------
 GET   /addComment/:postId               controllers.CommentController.createComment(postId : Long)

@@ -66,6 +66,10 @@ public class Post extends Model {
 		return find.where().eq("id", id).findUnique();
 	}
 	
+	public static List<Post> findTitle(String keyword) {
+		return find.where().like("url", "%" + keyword + "%").findList();
+	}
+	
 	public void save() {
 		if(this.createDate == null){
 			this.createDate = new Date();

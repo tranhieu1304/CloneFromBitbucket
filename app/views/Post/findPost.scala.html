@@ -1,9 +1,5 @@
-@(posts: List[models.Post])
-	<link rel="stylesheet"  href="@routes.Assets.versioned("stylesheets/post.css")">
-@import java.lang.String;  var username = "";
-@import java.lang.Long; var favoriteId = 0l;
+@(posts: List[models.Post], form: Form[controllers.PostController.FindForm])
 
-	
 @main("FeedPicks") {
 	<div>
 	    <div class="container">
@@ -11,16 +7,28 @@
 	            <div class="input-group col-sm-6">
 	                  <label>
 	                      <a class="btn btn-success" href="@routes.PostController.addPost">投稿</a>
-	                      <a class="btn btn-success" href="@routes.PostController.findPost">検索</a>
 	                  </label>
+	                  <div>
+	                      <h3>検索</h3>
+	                      
+	                      @helper.form(action = routes.PostController.findPost(), 'method -> "GET") {
+	                      	@(helper.inputText(
+	                      		field = form("keyword"),
+	                      		'_label -> "",
+	                      		'placeholder -> "キーワード"
+	                      	))
+	                      	
+	                      	<input type="submit">
+	                      }
+	                 </div>
 	            </div>
 	        </div>
 	        <div></div>
 	
-	        <table class="table table-filter" id="productTable">
+	        <table class="table table-bordered table-striped" id="productTable">
 	            <thead>
 		            <tr>
-		                <th>気に入る</th>
+		                <th>Id</th>
 		                <th>投稿日</th>
 		                <th>投稿者</th>
 		                <th>記事一覧</th>
@@ -29,20 +37,8 @@
 	            </thead>
 	            <tbody>
 		            @for(post <- posts){
-		            	@{favoriteId = 0}
-			            @for(favorite <-post.favorites){
-			            	@if(favorite.user !=null){
-				            	@if(favorite.user.name == session.get("username")){
-				            		@{favoriteId = favorite.id}
-				            	} 
-				            }
-					      }
-			            <tr id="@post.id" class="postList">
-			                <td>
-			                	<a href="javascript:;" class="star" id="@favoriteId">
-									<i class="glyphicon glyphicon-star"></i>
-								</a>
-			                </td>
+			            <tr id="@post.id">
+			                <td>@post.id</td>
 			                <td>@post.createDate</td>
 			                <th>@post.user.name</th>
 			                <td>
@@ -56,4 +52,3 @@
 	    </div>
 	</div>
 }
-<script src="@routes.Assets.versioned("javascripts/post.js")" type="text/javascript"></script>
