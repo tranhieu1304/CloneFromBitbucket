@@ -1,4 +1,4 @@
-@(posts: List[models.Post])
+@(posts: List[models.Post], form: Form[controllers.PostController.FindForm])
 
 @main("FeedPicks") {
 	<div>
@@ -7,8 +7,20 @@
 	            <div class="input-group col-sm-6">
 	                  <label>
 	                      <a class="btn btn-success" href="@routes.PostController.addPost">投稿</a>
-	                      <a class="btn btn-success" href="@routes.PostController.findPost">検索</a>
 	                  </label>
+	                  <div>
+	                      <h3>検索</h3>
+	                      
+	                      @helper.form(action = routes.PostController.findPost(), 'method -> "GET") {
+	                      	@(helper.inputText(
+	                      		field = form("keyword"),
+	                      		'_label -> "",
+	                      		'placeholder -> "キーワード"
+	                      	))
+	                      	
+	                      	<input type="submit">
+	                      }
+	                 </div>
 	            </div>
 	        </div>
 	        <div></div>

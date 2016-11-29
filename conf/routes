@@ -7,6 +7,7 @@ GET     /listPost                       controllers.PostController.showAllPost
 GET    /addPost							controllers.PostController.addPost
 POST   /createPost						controllers.PostController.createPost
 GET   /createPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
+GET		/find							controllers.PostController.findPost
 
 #For Comment--------------------------------------------------------------------
 GET   /addComment/:postId               controllers.CommentController.createComment(postId : Long)
