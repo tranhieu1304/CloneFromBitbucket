@@ -3,6 +3,8 @@ package constants;
 public class Constant {
 
     public final static String SESSION_USER_NAME = "username";
+    
+    public final static String SESSION_USER_EMAIL = "email";
 
     public final static String SESSION_RETURN_URL = "returnUrl";
 

@@ -5,6 +5,7 @@ import com.google.inject.Inject;
 import constants.Constant;
 import helpers.Secured;
 import models.LoginForm;
+import models.User;
 import play.data.Form;
 import play.data.FormFactory;
 import play.filters.csrf.AddCSRFToken;
@@ -28,14 +29,15 @@ public class AuthController extends Controller {
 		Form<LoginForm> f = formFactory.form(LoginForm.class).bindFromRequest();
 
 		if (f.hasErrors()) {
+			System.out.println(f.errors().toString());
 			return badRequest(views.html.Author.login.render(f));
 		} else {
-			session(Constant.SESSION_USER_NAME, f.get().name);
+			session(Constant.SESSION_USER_EMAIL, f.get().email);
+			session(Constant.SESSION_USER_NAME, User.findByEmail(f.get().email).name);
 			String returnUrl = ctx().session().get(Constant.SESSION_RETURN_URL);
 			if (returnUrl == null
 					|| returnUrl.equals("")
-					|| returnUrl.equals(routes.AuthController.login().absoluteURL(
-							request()))) {
+					|| returnUrl.equals(routes.AuthController.login().absoluteURL(request()))) {
 				returnUrl = routes.Application.index().url();
 			}
 			return redirect(returnUrl);

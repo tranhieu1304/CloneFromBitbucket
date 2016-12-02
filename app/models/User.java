@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
@@ -28,7 +29,7 @@ import play.mvc.Http;
  *
  */
 @Entity
-@Table(name = "user")
+@Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = "email") })
 public class User extends Model {
 	@Id
 	@GeneratedValue
@@ -53,15 +54,13 @@ public class User extends Model {
 	public int sex;
 
 	@Column(name = "birthday")
-	@CreatedTimestamp
 	public java.util.Date birthday;
 
 	@Column(name = "createDate")
 	@CreatedTimestamp
-	public java.util.Date createDate = new Date();
+	public java.util.Date createDate;
 
 	@Column(name = "modifiedDate")
-	@CreatedTimestamp
 	public java.util.Date modifiedDate;
 
 	@Column(name = "isDelete")
@@ -80,13 +79,14 @@ public class User extends Model {
 	private static Finder<Long, User> find = new Finder<>(User.class);
 
 	public void save() {
-
+		this.createDate = new Date();
 		if (this.birthday == null) {
 			this.birthday = new Date();
 
 		}
 		try {
 			this.password = sha512(this.password);
+			this.passwordConf = sha512(this.password);
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 
@@ -97,6 +97,7 @@ public class User extends Model {
 	public void update() {
 		if (this.birthday == null)
 			this.birthday = new Date();
+		this.modifiedDate = new Date();
 		super.update();
 	}
 
@@ -118,7 +119,7 @@ public class User extends Model {
 	}
 
 	public static Boolean isLogin() {
-		return Http.Context.current().session().get(Constant.SESSION_USER_NAME) != null;
+		return Http.Context.current().session().get(Constant.SESSION_USER_EMAIL) != null;
 	}
 
 	public static String userName() {
@@ -129,24 +130,32 @@ public class User extends Model {
 			return "";
 	}
 
+	public static String email() {
+		String email = Http.Context.current().session().get(Constant.SESSION_USER_EMAIL);
+		if (isLogin()) {
+			return email;
+		} else
+			return "";
+	}
+
 	public static User findById(long id) {
 		return find.where().eq("id", id).findUnique();
 	}
 
-	public static User findByName(String userName) {
-		return find.where().eq("name", userName).findUnique();
+	public static User findByEmail(String email) {
+		return find.where().eq("email", email).findUnique();
 	}
 
-	public static User findByNameAndPassword(String name, String password) {
-		return find.where().eq("name", name).eq("password", password).findUnique();
+	public static User findByEmailAndPassword(String email, String password) {
+		return find.where().eq("email", email).eq("password", password).findUnique();
 	}
 
-	public static User authenticate(String name, String password) throws NoSuchAlgorithmException {
+	public static User authenticate(String email, String password) throws NoSuchAlgorithmException {
 		String hashedPassword = "";
 		if (password != null) {
 			hashedPassword = sha512(password);
 		}
-		return findByNameAndPassword(name, hashedPassword);
+		return findByEmailAndPassword(email, hashedPassword);
 	}
 
 	public static List<User> findAll() {

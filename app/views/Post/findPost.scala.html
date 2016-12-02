@@ -1,5 +1,8 @@
 @(posts: List[models.Post], form: Form[controllers.PostController.FindForm])
 
+@import java.lang.String;  var username = "";var favoriteStatus = true;
+@import java.lang.Long; var favoriteId = -1l; var countFavorite = 0l;
+
 @main("FeedPicks") {
 	<div>
 	    <div class="container">
@@ -25,11 +28,12 @@
 	        </div>
 	        <div></div>
 	
-	        <table class="table table-bordered table-striped" id="productTable">
+	        <table class="table table-filter" id="productTable">
 	            <thead>
-		            <tr>
-		                <th>Id</th>
+		            <tr  class="postList">
+		                <th>お気に入り</th>
 		                <th>投稿日</th>
+		                <th>画像</th>
 		                <th>投稿者</th>
 		                <th>記事一覧</th>
 		                <th>遷移</th>
@@ -37,14 +41,35 @@
 	            </thead>
 	            <tbody>
 		            @for(post <- posts){
-			            <tr id="@post.id">
-			                <td>@post.id</td>
-			                <td>@post.createDate</td>
-			                <th>@post.user.name</th>
+		            	@{countFavorite=0}
+		            	@{favoriteId = -1}
+			            @for(favorite <-post.favorites){
+			            	@if(favorite.user !=null){
+				            	@if(favorite.user.email == session.get("email")){
+				            			@{favoriteId = favorite.id}
+				            			@(favoriteStatus = favorite.isDelete)
+				            	} 
+				            	@if(favorite.isDelete == false){
+				            		@{countFavorite += 1}
+				            	}
+				            }
+					      }
+			            <tr id="@post.id" class="postList">
 			                <td>
-			                	<a class="" href="@routes.PostController.viewPostDetail(post.id)">@post.title</a>
+								<a  href="#" class="star" data-like="0"> @countFavorite </a>
 			                </td>
-			                <td><a class="btn btn-success" href="">Vist Website</a></td>
+			                <td>@post.createDate.format("dd/MM/yyyy")</td>
+			                <td class="image">
+			                	<img alt="" src="@post.imgUrl">
+			                </td>
+			                <td>@post.user.name</td>
+			                <td>
+			                	<a class="" href="@routes.PostController.viewPostDetail(post.id)">@post.title</a>	
+			                </td>
+			                <td>
+								<a class="btn btn-danger" href="">削除</a>
+			                	<a class="btn btn-success" href="">編集</a>
+							</td>
 			            </tr>　
 		            }
 	            </tbody>

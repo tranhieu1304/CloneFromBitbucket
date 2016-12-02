@@ -47,6 +47,10 @@ public class Favorite extends Model {
 		return find.where().eq("id", favoriteId).findUnique();
 	}
 
+	public static Favorite findByUserAndPost(User user, Post post) {
+		return find.where().in("user", user).in("post", post).findUnique();
+	}
+
 	public void save() {
 		if (this.createDate == null) {
 			this.createDate = new Date();

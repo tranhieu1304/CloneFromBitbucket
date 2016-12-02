@@ -10,7 +10,7 @@ public class Secured extends Security.Authenticator {
 
     @Override
     public String getUsername(Context ctx) {
-        return ctx.session().get(Constant.SESSION_USER_NAME);
+        return ctx.session().get(Constant.SESSION_USER_EMAIL);
     }
 
     @Override

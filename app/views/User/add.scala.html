@@ -1,49 +1,65 @@
 @(form: Form[models.User])
 
+@import b3.vertical.fieldConstructor
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/createUser.css")">
 @main("新規作成") {
-	<h3>アカウント登録</h3>
-	<h4>無料でご利用いただけます</h4>
-	
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="form-group">
+                <h2>アカウント登録</h2>
+                <h4>無料でご利用いただけます</h4>
+            </div>
+            
 	<div class="form-create">
-		@helper.form(action = routes.UserController.create(), 'method -> "POST") {
-			@(helper.inputText (
-				field = form("email"),
-				'_label -> "メールアドレス",
-				'placeholder -> "xxx@xxx"
-			))
-			
-			@(helper.inputPassword (
-				field = form("password"),
-				'_label -> "パスワード",
-				'placeholder -> "12345678"
-			))
-			
-			@(helper.inputText(
-				field = form("passwordConf"),
-				'_label -> "パスワード（確認）",
-				'placeholder -> "12345678"
-			))
-			
-			@(helper.inputText(
-				field = form("name"),
-				'_label -> "名前",
-				'placeholder -> "名前"
-			))
-			
-			@(helper.inputDate(
-				field = form("birthday"),
-				'_label -> "誕生日",
-				'placeholder -> "年月日"
-			))
-			
-			@(helper.inputRadioGroup (
-				field = form("sex"),
-				options = Seq("0" -> "男性",
-							"1" -> "女性"),
-				'_label -> "性別"
-			))
-			
-			<button type="submit">新規登録</button>
+	 	@b3.form(action = routes.UserController.create(), 'method -> "POST") {
+	 	    <div class="form-group">
+                @b3.inputWrapped(
+					                "email",
+					                form("email"),
+					                '_label -> "メールアドレス",
+					                'placeholder -> "xxx@xxx" 
+				                ) { input =>
+				               			<div class="input-group">@input </div>
+								  }
+            </div>
+           <div class="form-group">
+	           @b3.password( 
+	           				form("password"),
+	           			 	'_label -> "パスワード",
+	           			  	'placeholder -> "12345678" 
+	           			  )
+            </div>
+			<div class="form-group">
+	           @b3.password( 
+	           				form("passwordConf"),
+	           			 	'_label -> "パスワード（確認）",
+	           			  	'placeholder -> "12345678" 
+	           			  )
+            </div>
+			<div class="form-group">
+				@b3.text(
+					field = form("name"),
+					'_label -> "名前",
+					'placeholder -> "名前"
+				)
+			</div>
+			<div class="form-group">
+				@b3.date(
+	                        field = form("birthday"),
+	                        '_label -> "誕生日"
+	                )
+			</div>
+			<div class="form-group">
+			    @b3.radio(
+		                form("sex"),
+		                options = Seq("0" -> "男性",
+		                			  "1" -> "女性"),
+		                '_label -> "性別" 
+	                )
+			</div>
+			<input class="btn btn-primary btn-m btn-block" type="submit" value="新規登録">
 		}
 	</div>
 }
+

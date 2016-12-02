@@ -15,8 +15,11 @@ GET   /addComment/:postId               controllers.CommentController.createComm
 
 
 #For User--------------------------------------------------------------------
-GET     /add                            controllers.UserController.add
-POST    /create                         controllers.UserController.create
+GET     /addUser                            controllers.UserController.add
+POST    /createUser                         controllers.UserController.create
+GET     /editUser/:userName                 controllers.UserController.editUser(userName : String)
+POST    /update/                            controllers.UserController.update
+
 
 #For Authenticate-------------------------------------------------------------
 GET     /login                          controllers.AuthController.login

@@ -30,7 +30,7 @@ public class CommentController extends Controller {
 		//  This request send one more time to server >>> let fix it
 		Http.Request request = Http.Context.current().request();
 		String userName = request.username();
-		User user = User.findByName(userName);
+		User user = User.findByEmail(userName);
 		Post post = Post.findById(postId);
 		Form<Comment> form = formFactory.form(Comment.class).bindFromRequest();
 		if (!form.hasErrors()) {
