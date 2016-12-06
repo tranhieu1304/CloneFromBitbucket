@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/mac_tshiono/Development/java_Play/feedpicks-identity/}root...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/Users/mac_thieu/feedpicks/}root...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@e892693[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@42ac0e0d[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -57,7 +57,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-xml_2.11;1.0.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->runtime(*)][0m
@@ -82,7 +82,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT->com.typesafe.play#play-ebean_2.11;3.0.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-ebean_2.11;3.0.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-ebean_2.11;3.0.2->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-ebean_2.11;3.0.2->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-ebean_2.11;3.0.2->com.typesafe.play#play-java-jdbc_2.11;2.5.2 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-ebean_2.11;3.0.2->com.typesafe.play#play-java-jdbc_2.11;2.5.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-ebean_2.11;3.0.2->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.2 [compile->master(compile)][0m
@@ -332,8 +331,8 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -703,7 +702,7 @@
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.slf4j#slf4j-api;[1.7.1,1.7.99) {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0mdefault-cache: cached resolved revision expired for org.slf4j#slf4j-api;[1.7.1,1.7.99)[0m
 [0m[[0mdebug[0m] [0mdefault-cache: cached resolved revision expired for org.slf4j#slf4j-api;[1.7.1,1.7.99)[0m
-[0m[[0mdebug[0m] [0m		tried /Users/mac_tshiono/.ivy2/local/org.slf4j/slf4j-api/[revision]/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /Users/mac_thieu/.ivy2/local/org.slf4j/slf4j-api/[revision]/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.slf4j#slf4j-api;[1.7.1,1.7.99)[0m
 [0m[[0mdebug[0m] [0mdefault-cache: cached resolved revision expired for org.slf4j#slf4j-api;[1.7.1,1.7.99)[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/slf4j/slf4j-api/[revision]/slf4j-api-[revision].pom[0m
@@ -2134,7 +2133,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -2285,7 +2284,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-streams_2.11;2.5.10->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master(compile)][0m
@@ -3248,7 +3247,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -3399,7 +3398,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-streams_2.11;2.5.10->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master(compile)][0m
@@ -4884,7 +4883,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -5035,7 +5034,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-streams_2.11;2.5.10->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master(compile)][0m
@@ -6000,7 +5999,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -6151,7 +6150,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-streams_2.11;2.5.10->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master(compile)][0m
@@ -7116,7 +7115,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -7267,7 +7266,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-streams_2.11;2.5.10->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master(compile)][0m
@@ -8695,7 +8694,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.2.1->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-streams_2.11;2.5.10->org.scala-lang.modules#scala-java8-compat_2.11;0.7.0 [compile->master(compile)][0m
@@ -8710,7 +8709,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.11;2.5.10->org.slf4j#slf4j-api;[1.7.1,1.7.99) [compile->master(compile)][0m
@@ -9179,8 +9178,8 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-xml_2.11;1.0.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-xml_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-xml_2.11;1.0.4 [compile->runtime(*)][0m
@@ -9190,8 +9189,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
@@ -9392,21 +9391,21 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.7!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 16524ms :: artifacts dl 75ms[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT compile produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT runtime produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT test produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT provided produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT optional produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT compile-internal produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT runtime-internal produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT test-internal produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT plugin produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT sources produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT docs produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT pom produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT scala-tool produced in /Users/mac_tshiono/Development/java_Play/feedpicks-identity/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (16524ms resolve - 75ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 16106ms :: artifacts dl 86ms[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT compile produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT runtime produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT test produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT provided produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT optional produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT compile-internal produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT runtime-internal produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT test-internal produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT plugin produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT sources produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT docs produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT pom produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for feedpicks-identity#feedpicks-identity_2.11;1.0-SNAPSHOT scala-tool produced in /Users/mac_thieu/feedpicks/target/resolution-cache/reports/feedpicks-identity-feedpicks-identity_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (16106ms resolve - 86ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m

@@ -72,8 +72,8 @@ Seq[Any](format.raw/*1.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 21 20:09:46 JST 2016
-                  SOURCE: /Users/mac_tshiono/Development/java_Play/feedpicks-identity/app/views/main.scala.html
+                  DATE: Tue Dec 06 14:09:48 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks/app/views/main.scala.html
                   HASH: 4180975590a2ec4b0308d0e5cc0d66442eac4a44
                   MATRIX: 748->1|873->31|901->33|974->81|999->86|1400->460|1415->466|1477->507|1557->561|1572->567|1632->606|1789->736|1804->742|1834->751|1907->797|1935->804
                   LINES: 27->1|32->1|34->3|37->6|37->6|44->13|44->13|44->13|46->15|46->15|46->15|51->20|51->20|51->20|53->22|53->22

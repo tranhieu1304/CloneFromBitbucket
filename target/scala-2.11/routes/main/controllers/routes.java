@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/mac_tshiono/Development/java_Play/feedpicks-identity/conf/routes
-// @DATE:Mon Nov 28 12:00:20 JST 2016
+// @SOURCE:/Users/mac_thieu/feedpicks/conf/routes
+// @DATE:Tue Dec 06 14:09:47 JST 2016
 
 package controllers;
 

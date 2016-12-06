@@ -62,8 +62,8 @@ Seq[Any](format.raw/*1.1*/("""<nav class="navbar navbar-default navbar-fixed-top
 object header extends header_Scope0.header
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 28 12:01:19 JST 2016
-                  SOURCE: /Users/mac_tshiono/Development/java_Play/feedpicks-identity/app/views/common/header.scala.html
+                  DATE: Tue Dec 06 14:09:48 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks/app/views/common/header.scala.html
                   HASH: 32b8885a503c88cb600a73c481fdece1d591d298
                   MATRIX: 836->0|1115->253|1146->276|1185->278|1224->290|1264->304|1278->310|1322->334|1367->361|1379->365|1417->366|1457->378|1498->392|1513->398|1557->421|1614->447|1649->455
                   LINES: 32->1|38->7|38->7|38->7|39->8|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|41->10|42->11|43->12

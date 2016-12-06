@@ -98,8 +98,8 @@ Seq[Any](format.raw/*1.27*/("""
 object add extends add_Scope0.add
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 24 17:49:22 JST 2016
-                  SOURCE: /Users/mac_tshiono/Development/java_Play/feedpicks-identity/app/views/User/add.scala.html
+                  DATE: Tue Dec 06 14:09:48 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks/app/views/User/add.scala.html
                   HASH: 0b002a2c992c5800db4ef8ca4053a0f169be3035
                   MATRIX: 757->1|877->26|905->29|925->41|964->43|992->45|1089->117|1103->123|1176->188|1215->190|1245->195|1373->303|1408->312|1542->426|1577->435|1718->556|1753->565|1869->661|1904->670|2026->772|2061->781|2217->917|2252->925|2321->964|2350->966|2388->974
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|39->8|39->8|39->8|39->8|40->9|44->13|46->15|50->19|52->21|56->25|58->27|62->31|64->33|68->37|70->39|75->44|77->46|78->47|79->48|80->49
