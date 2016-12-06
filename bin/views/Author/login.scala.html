@@ -1,0 +1,42 @@
+@(form: Form[models.LoginForm])
+
+@main("ログイン") {
+  <div class="row">
+    <div class="col-md-offset-5 col-md-3">
+      <div class="form-login">
+      @helper.form(action = routes.AuthController.auth(), 'method -> "POST") {
+        <h4>ログイン</h4>
+        @helper.CSRF.formField
+        @if(form.hasGlobalErrors) {
+          <p>@form.globalError.message</p>
+        }
+        @(helper.inputText (
+          field = form("email"),
+          'class -> "form-control input-sm chat-input",
+          'placeholder -> "napa@identity",
+          '_label -> "ユーザー名",
+          '_showConstraints -> false
+        ))
+        @(helper.inputPassword (
+          field = form("password"),
+          'class -> "form-control input-sm chat-input",
+          'placeholder -> "password",
+          '_label -> "パスワード",
+          '_showConstraints -> false
+        ))
+        <div class="wrapper">
+          <span class="group-btn">
+            <button type="submit" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+          </span>
+        </div>
+      }
+      </div>
+      
+      <div class="form-create">
+      	@helper.form(action = routes.UserController.add(), 'method -> "GET") {
+      		<button type="submit">新規登録</button>
+      	}
+      </div>
+    </div>
+  </div>
+}

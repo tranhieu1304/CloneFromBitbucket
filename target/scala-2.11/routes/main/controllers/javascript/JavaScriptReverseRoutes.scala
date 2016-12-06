@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/mac_thieu/feedpicks/conf/routes
-// @DATE:Mon Dec 05 15:49:53 JST 2016
+// @SOURCE:/Users/mac_thieu/git/CloneFromBitbucket/conf/routes
+// @DATE:Tue Dec 06 14:30:47 JST 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }

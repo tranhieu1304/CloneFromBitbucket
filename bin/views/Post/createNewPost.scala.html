@@ -1,0 +1,31 @@
+@(formPost: Form[models.Post], posts: List[models.Post], message : List[String], currentPage: Int, maxPage: Int)
+
+@import java.lang.String;  var username = "";var favoriteStatus = true;
+@import java.lang.Long; var favoriteId = -1l; var countFavorite = 0l;
+
+@main("New Post") {
+	<div>
+	    <div class="container">
+	        <div class="form-inline">
+	            <div class="input-group col-sm-6">
+					@helper.form(action = routes.PostController.createPost(), 'method -> "POST") {
+						@(helper.inputText (
+							field = formPost("url"),
+							'_label -> "Url",
+							'placeholder -> "Enter Url"
+						))
+							@if(message.size()>0){
+								@for( error <- message){
+									<p style="color:red;"> @error</p>
+								}
+							}
+						<button type="submit">投稿</button>
+					}
+	            </div>
+	        </div>
+	        @tablePost(posts, "createNewPost", currentPage, maxPage)
+	
+	    </div>
+	</div>
+	<a class="#" href="@routes.PostController.showAllPost(1)">All Post </a>
+}

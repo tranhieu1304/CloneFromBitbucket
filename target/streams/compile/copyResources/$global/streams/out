@@ -1,8 +1,8 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/application.conf,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/evolutions,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/evolutions)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/logback.xml,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/routes,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/routes.orig,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/routes.orig)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/evolutions/default,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/evolutions/default)[0m
-[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/feedpicks/conf/evolutions/default/1.sql,/Users/mac_thieu/feedpicks/target/scala-2.11/classes/evolutions/default/1.sql)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/application.conf,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/evolutions,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/logback.xml,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/routes,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/routes.orig,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/routes.orig)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/evolutions/default,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/Users/mac_thieu/git/CloneFromBitbucket/conf/evolutions/default/1.sql,/Users/mac_thieu/git/CloneFromBitbucket/target/scala-2.11/classes/evolutions/default/1.sql)[0m

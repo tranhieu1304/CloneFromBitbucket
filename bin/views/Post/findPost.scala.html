@@ -1,0 +1,33 @@
+@(posts: List[models.Post], form: Form[controllers.PostController.FindForm], currentPage: Int, maxPage: Int)
+
+@import java.lang.String;  var username = "";var favoriteStatus = true;
+@import java.lang.Long; var favoriteId = -1l; var countFavorite = 0l;
+
+@main("FeedPicks") {
+	<div>
+	    <div class="container">
+	        <div class="form-inline">
+	            <div class="input-group col-sm-6">
+	                  <label>
+	                      <a class="btn btn-success" href="@routes.PostController.addPost(1)">投稿</a>
+	                  </label>
+	                  <div>
+	                      <h3>検索</h3>
+	                      
+	                      @helper.form(action = routes.PostController.findPost(1), 'method -> "GET") {
+	                      	@(helper.inputText(
+	                      		field = form("keyword"),
+	                      		'_label -> "",
+	                      		'placeholder -> "キーワード"
+	                      	))
+	                      	
+	                      	<input type="submit">
+	                      }
+	                 </div>
+	            </div>
+	        </div>
+	        <div></div>
+			 @tablePost(posts, "findPost", currentPage, maxPage)
+	    </div>
+	</div>
+}

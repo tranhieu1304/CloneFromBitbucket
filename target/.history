@@ -66,3 +66,7 @@ compile
 clean
 compile
 run
+clean
+update
+compile
+run

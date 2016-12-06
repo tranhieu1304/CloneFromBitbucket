@@ -63,8 +63,8 @@ Seq[Any](format.raw/*1.1*/("""<nav class="navbar navbar-default navbar-fixed-top
 object header extends header_Scope0.header
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 05 15:49:54 JST 2016
-                  SOURCE: /Users/mac_thieu/feedpicks/app/views/common/header.scala.html
+                  DATE: Tue Dec 06 14:30:48 JST 2016
+                  SOURCE: /Users/mac_thieu/git/CloneFromBitbucket/app/views/common/header.scala.html
                   HASH: 352b3b2f2c995fcd680b374cbe33bfd4248710d0
                   MATRIX: 836->0|983->121|997->127|1047->157|1196->280|1227->303|1266->305|1305->317|1345->331|1359->337|1422->380|1451->383|1466->390|1503->406|1564->441|1578->447|1622->471|1668->498|1681->502|1720->503|1760->515|1801->529|1816->535|1860->558|1917->584|1952->592
                   LINES: 32->1|34->3|34->3|34->3|38->7|38->7|38->7|39->8|39->8|39->8|39->8|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|42->11|42->11|42->11|42->11|43->12|44->13

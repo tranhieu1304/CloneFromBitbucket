@@ -1,0 +1,18 @@
+@(posts: List[models.Post], currentPage: Int, maxPage: Int)
+
+@main("FeedPicks") {
+	<div>
+	    <div class="container">
+	        <div class="form-inline">
+	            <div class="input-group col-sm-6">
+	                  <label>
+	                      <a class="btn btn-success" href="@routes.PostController.addPost(1)">投稿</a>
+	                      <a class="btn btn-success" href="@routes.PostController.findPost(1)">検索</a>
+	                  </label>
+	            </div>
+	        </div>
+	        <div></div>
+				@tablePost(posts, "showAllPost", currentPage, maxPage)
+	    </div>
+	</div>
+}

@@ -1,0 +1,39 @@
+@(post: models.Post, formComment : Form[models.Comment])
+
+@main("FeedPicks") {
+	<div>
+	    <div class="container">
+		<div>
+			<h2>post.title</h2>
+		</div>
+	        <table class="table table-bordered table-striped" id="productTable">
+	            <thead>
+		            <tr>
+		                <th>Id</th>
+		                <th>投稿日</th>
+		                <th>投稿者</th>
+		                <th>コメント</th>
+		            </tr>
+	            </thead>
+	            <tbody>
+		            @for(comment <- post.comments){
+			            <tr id="@comment.id">
+			                <td>@comment.id</td>
+			                <td>@comment.createDate</td>
+			                <th>@comment.user.name</th>
+			                <td>@comment.content</td>
+			            </tr>　
+		            }
+	            </tbody>
+	        </table>
+	        		@helper.form(action = routes.CommentController.createComment(post.id), 'method -> "POST") {
+						@(helper.inputText (
+							field = formComment("content"),
+							'_label -> "コメント",
+							'placeholder -> "コメントを入力"
+						))
+						<button type="submit">投稿</button>
+					}
+	    </div>
+	</div>
+}

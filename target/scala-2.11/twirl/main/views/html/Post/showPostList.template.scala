@@ -67,8 +67,8 @@ Seq[Any](format.raw/*1.60*/("""
 object showPostList extends showPostList_Scope0.showPostList
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 05 15:49:54 JST 2016
-                  SOURCE: /Users/mac_thieu/feedpicks/app/views/Post/showPostList.scala.html
+                  DATE: Tue Dec 06 14:30:48 JST 2016
+                  SOURCE: /Users/mac_thieu/git/CloneFromBitbucket/app/views/Post/showPostList.scala.html
                   HASH: 594a6394bc86cd9dce5c82f4232e8916e24ea633
                   MATRIX: 783->1|936->59|964->62|989->79|1028->81|1056->83|1284->285|1298->291|1344->317|1437->383|1452->389|1500->416|1625->515|1699->568|1732->574|1778->590
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|40->9|40->9|40->9|41->10|41->10|41->10|46->15|46->15|47->16|49->18
