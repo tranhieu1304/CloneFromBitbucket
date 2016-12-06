@@ -38,10 +38,12 @@ create table post (
   id                            bigint auto_increment not null,
   url                           varchar(255) not null,
   title                         varchar(255),
+  imgurl                        varchar(255),
   content                       varchar(255),
   isdelete                      tinyint(1) default 0,
   user_id                       bigint,
   createdate                    datetime(6) not null,
+  constraint uq_post_url unique (url),
   constraint pk_post primary key (id)
 );
 
@@ -52,10 +54,12 @@ create table user (
   passwordconf                  varchar(1024) not null,
   email                         varchar(1024) not null,
   sex                           integer,
+  birthday                      datetime(6),
+  modifieddate                  datetime(6),
   isdelete                      tinyint(1) default 0,
-  birthday                      datetime(6) not null,
+  imagecontent                  longblob,
   createdate                    datetime(6) not null,
-  modifieddate                  datetime(6) not null,
+  constraint uq_user_email unique (email),
   constraint pk_user primary key (id)
 );
 

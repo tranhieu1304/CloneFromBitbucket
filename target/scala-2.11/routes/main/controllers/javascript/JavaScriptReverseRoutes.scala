@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/mac_thieu/feedpicks-identity/conf/routes
-// @DATE:Mon Nov 28 10:58:37 JST 2016
+// @SOURCE:/Users/mac_thieu/feedpicks/conf/routes
+// @DATE:Mon Dec 05 15:49:53 JST 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:25
+  // @LINE:36
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:36
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -35,7 +35,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:16
+  // @LINE:24
   class ReverseUserController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,22 +43,62 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
-    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.create",
+    // @LINE:26
+    def editUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.editUser",
       """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "create"})
+        function(userName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "editUser/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("userName", encodeURIComponent(userName0))})
         }
       """
     )
   
-    // @LINE:16
+    // @LINE:27
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.update",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "update/"})
+        }
+      """
+    )
+  
+    // @LINE:25
+    def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.create",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "createUser"})
+        }
+      """
+    )
+  
+    // @LINE:24
     def add: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.add",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "add"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addUser"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:8
+  class ReverseFavoriteController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:8
+    def favoriedPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FavoriteController.favoriedPost",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "listPost/like"})
         }
       """
     )
@@ -85,7 +125,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:20
+  // @LINE:31
   class ReverseAuthController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -93,7 +133,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:33
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.logout",
       """
@@ -103,7 +143,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:32
     def auth: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.auth",
       """
@@ -113,7 +153,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:31
     def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.login",
       """
@@ -133,37 +173,35 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:12
+    def findPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PostController.findPost",
+      """
+        function(page0) {
+        
+          if (page0 == """ + implicitly[JavascriptLiteral[Integer]].to(1) + """) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "find/"})
+          }
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "find/index/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("page", page0)})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:14
     def viewPostDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PostController.viewPostDetail",
       """
         function(postId0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "createPost/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("postId", postId0)})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "detailPost/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("postId", postId0)})
         }
       """
     )
   
-    // @LINE:6
-    def showAllPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PostController.showAllPost",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "listPost"})
-        }
-      """
-    )
-  
-    // @LINE:7
-    def addPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PostController.addPost",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addPost"})
-        }
-      """
-    )
-  
-    // @LINE:8
+    // @LINE:11
     def createPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PostController.createPost",
       """
@@ -173,9 +211,45 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:9
+    def addPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PostController.addPost",
+      """
+        function(page0) {
+        
+          if (page0 == """ + implicitly[JavascriptLiteral[Integer]].to(1) + """) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addPost"})
+          }
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addPost/index/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("page", page0)})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:6
+    def showAllPost: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PostController.showAllPost",
+      """
+        function(page0) {
+        
+          if (page0 == """ + implicitly[JavascriptLiteral[Integer]].to(1) + """) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "listPost/index"})
+          }
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "listPost/index/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("page", page0)})
+          }
+        
+        }
+      """
+    )
+  
   }
 
-  // @LINE:12
+  // @LINE:20
   class ReverseCommentController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -183,7 +257,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:20
     def createComment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CommentController.createComment",
       """

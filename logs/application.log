@@ -1,0 +1,243 @@
+2016-12-06 11:58:11,642 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-12-06 11:58:12,219 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 11:58:13,453 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-12-06 11:58:22,836 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
+
+! @72a478bbm - Internal server error, for (GET) [/listPost/index] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PersistenceException: No property found for [idDelete] in expression comments.idDelete]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:293)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:220)
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:160)
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:188)
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:100)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:100)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:99)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:304)
+	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:289)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: javax.persistence.PersistenceException: No property found for [idDelete] in expression comments.idDelete
+	at com.avaje.ebeaninternal.server.deploy.BeanDescriptor.buildElGetValue(BeanDescriptor.java:2014)
+	at com.avaje.ebeaninternal.server.deploy.BeanPropertyAssoc.createElPropertyValue(BeanPropertyAssoc.java:123)
+	at com.avaje.ebeaninternal.server.deploy.BeanPropertyAssocMany.buildElPropertyValue(BeanPropertyAssocMany.java:278)
+	at com.avaje.ebeaninternal.server.deploy.BeanDescriptor.buildElGetValue(BeanDescriptor.java:2006)
+	at com.avaje.ebeaninternal.server.deploy.BeanDescriptor.getElPropertyDeploy(BeanDescriptor.java:1978)
+	at com.avaje.ebeaninternal.server.expression.AbstractExpression.propertyContainsMany(AbstractExpression.java:39)
+	at com.avaje.ebeaninternal.server.expression.AbstractExpression.containsMany(AbstractExpression.java:31)
+	at com.avaje.ebeaninternal.server.expression.DefaultExpressionList.containsMany(DefaultExpressionList.java:194)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.createExtraJoinsToSupportManyWhereClause(DefaultOrmQuery.java:404)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.convertJoins(DefaultOrmQuery.java:471)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.prepareQuery(OrmQueryRequest.java:161)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.createQueryRequest(DefaultServer.java:1035)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.createQueryRequest(DefaultServer.java:1016)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1377)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findUnique(DefaultServer.java:1138)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findUnique(DefaultOrmQuery.java:1104)
+	at com.avaje.ebeaninternal.server.expression.DefaultExpressionList.findUnique(DefaultExpressionList.java:352)
+	at models.Post.findByPostIdCommentStatus(Post.java:105)
+	at controllers.PostController.showAllPost(PostController.java:40)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:427)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:427)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:157)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:156)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:136)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:73)
+	at play.http.HttpRequestHandler$1.call(HttpRequestHandler.java:54)
+	at play.mvc.Security$AuthenticatedAction.call(Security.java:53)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction.apply(JavaAction.scala:108)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:111)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:110)
+	at scala.Option.map(Option.scala:146)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:110)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:103)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	... 14 common frames omitted
+2016-12-06 11:58:41,913 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
+
+! @72a479dhj - Internal server error, for (GET) [/listPost/index] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PersistenceException: No property found for [idDelete] in expression comments.idDelete]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:293)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:220)
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:160)
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:188)
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:100)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:100)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:99)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:304)
+	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:289)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:415)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: javax.persistence.PersistenceException: No property found for [idDelete] in expression comments.idDelete
+	at com.avaje.ebeaninternal.server.deploy.BeanDescriptor.buildElGetValue(BeanDescriptor.java:2014)
+	at com.avaje.ebeaninternal.server.deploy.BeanPropertyAssoc.createElPropertyValue(BeanPropertyAssoc.java:123)
+	at com.avaje.ebeaninternal.server.deploy.BeanPropertyAssocMany.buildElPropertyValue(BeanPropertyAssocMany.java:278)
+	at com.avaje.ebeaninternal.server.deploy.BeanDescriptor.buildElGetValue(BeanDescriptor.java:2006)
+	at com.avaje.ebeaninternal.server.deploy.BeanDescriptor.getElPropertyDeploy(BeanDescriptor.java:1978)
+	at com.avaje.ebeaninternal.server.expression.AbstractExpression.propertyContainsMany(AbstractExpression.java:39)
+	at com.avaje.ebeaninternal.server.expression.AbstractExpression.containsMany(AbstractExpression.java:31)
+	at com.avaje.ebeaninternal.server.expression.DefaultExpressionList.containsMany(DefaultExpressionList.java:194)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.createExtraJoinsToSupportManyWhereClause(DefaultOrmQuery.java:404)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.convertJoins(DefaultOrmQuery.java:471)
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.prepareQuery(OrmQueryRequest.java:161)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.createQueryRequest(DefaultServer.java:1035)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.createQueryRequest(DefaultServer.java:1016)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1377)
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findUnique(DefaultServer.java:1138)
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findUnique(DefaultOrmQuery.java:1104)
+	at com.avaje.ebeaninternal.server.expression.DefaultExpressionList.findUnique(DefaultExpressionList.java:352)
+	at models.Post.findByPostIdCommentStatus(Post.java:105)
+	at controllers.PostController.showAllPost(PostController.java:40)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:427)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:427)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:157)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:156)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:136)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:73)
+	at play.http.HttpRequestHandler$1.call(HttpRequestHandler.java:54)
+	at play.mvc.Security$AuthenticatedAction.call(Security.java:53)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction.apply(JavaAction.scala:108)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:111)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:110)
+	at scala.Option.map(Option.scala:146)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:110)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:103)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	... 14 common frames omitted
+2016-12-06 11:58:47,377 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2016-12-06 11:58:47,542 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2016-12-06 11:58:47,555 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 11:58:47,777 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-12-06 12:04:11,087 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
+2016-12-06 12:04:11,437 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2016-12-06 12:04:11,451 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:04:11,714 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
+2016-12-06 12:04:22,366 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2016-12-06 12:04:22,543 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2016-12-06 12:04:22,558 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:04:22,753 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2016-12-06 12:05:42,940 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2016-12-06 12:05:43,094 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2016-12-06 12:05:43,111 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:05:43,389 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2016-12-06 12:06:22,284 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
+2016-12-06 12:06:22,659 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2016-12-06 12:06:22,669 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:06:22,835 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
+2016-12-06 12:08:26,864 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2016-12-06 12:08:27,295 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2016-12-06 12:08:27,305 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:08:27,489 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-12-06 12:15:56,725 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
+2016-12-06 12:15:57,123 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2016-12-06 12:15:57,131 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:15:57,260 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
+2016-12-06 12:16:16,221 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2016-12-06 12:16:16,385 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2016-12-06 12:16:16,395 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:16:16,570 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2016-12-06 12:18:55,445 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2016-12-06 12:18:55,826 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2016-12-06 12:18:55,834 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:18:55,957 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-12-06 12:19:48,470 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2016-12-06 12:19:48,581 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2016-12-06 12:19:48,590 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:19:48,770 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2016-12-06 12:21:42,947 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2016-12-06 12:21:43,429 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2016-12-06 12:21:43,437 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:21:43,575 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2016-12-06 12:22:03,993 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2016-12-06 12:22:04,067 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2016-12-06 12:22:04,076 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:22:04,262 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2016-12-06 12:22:15,877 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2016-12-06 12:22:15,953 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2016-12-06 12:22:15,964 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:22:16,126 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-12-06 12:22:48,120 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2016-12-06 12:22:48,206 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2016-12-06 12:22:48,227 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:22:48,404 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2016-12-06 12:23:11,575 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2016-12-06 12:23:11,717 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2016-12-06 12:23:11,724 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:23:11,893 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2016-12-06 12:25:02,741 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2016-12-06 12:25:03,144 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2016-12-06 12:25:03,153 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:25:03,286 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-12-06 12:25:13,599 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2016-12-06 12:25:13,662 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2016-12-06 12:25:13,671 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:25:13,841 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2016-12-06 12:33:31,370 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2016-12-06 12:33:31,758 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2016-12-06 12:33:31,765 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:mysql://127.0.0.1:3306/feedpicks?characterEncoding=UTF-8
+2016-12-06 12:33:31,884 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2016-12-06 13:39:52,749 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-19 housekeeper - HikariPool-19 - Thread starvation or clock leap detected (housekeeper delta=25m50s526ms).
+2016-12-06 13:58:40,979 [INFO] from application in pool-4-thread-5 - Shutting down connection pool.

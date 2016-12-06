@@ -21,70 +21,52 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class createNewPost extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[Form[models.Post],List[models.Post],String,play.twirl.api.HtmlFormat.Appendable] {
+class createNewPost extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template5[Form[models.Post],List[models.Post],List[String],Int,Int,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(formPost: Form[models.Post], posts: List[models.Post], postTitle : String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(formPost: Form[models.Post], posts: List[models.Post], message : List[String], currentPage: Int, maxPage: Int):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
+import java.lang.String;  var username = "";var favoriteStatus = true;
+import java.lang.Long; var favoriteId = -1l; var countFavorite = 0l;
 
+Seq[Any](format.raw/*1.113*/("""
 
-Seq[Any](format.raw/*1.77*/("""
-
-"""),_display_(/*3.2*/main("New Post")/*3.18*/ {_display_(Seq[Any](format.raw/*3.20*/("""
-	"""),format.raw/*4.2*/("""<div>
+"""),format.raw/*5.1*/("""
+"""),_display_(/*6.2*/main("New Post")/*6.18*/ {_display_(Seq[Any](format.raw/*6.20*/("""
+	"""),format.raw/*7.2*/("""<div>
 	    <div class="container">
 	        <div class="form-inline">
 	            <div class="input-group col-sm-6">
-					"""),_display_(/*8.7*/helper/*8.13*/.form(action = routes.PostController.createPost(), 'method -> "POST")/*8.82*/ {_display_(Seq[Any](format.raw/*8.84*/("""
-						"""),_display_(/*9.8*/(helper.inputText (
+					"""),_display_(/*11.7*/helper/*11.13*/.form(action = routes.PostController.createPost(), 'method -> "POST")/*11.82*/ {_display_(Seq[Any](format.raw/*11.84*/("""
+						"""),_display_(/*12.8*/(helper.inputText (
 							field = formPost("url"),
 							'_label -> "Url",
 							'placeholder -> "Enter Url"
-						))),format.raw/*13.9*/("""
-						"""),format.raw/*14.7*/("""<button type="submit">投稿</button>
-					""")))}),format.raw/*15.7*/("""
-	            """),format.raw/*16.14*/("""</div>
+						))),format.raw/*16.9*/("""
+							"""),_display_(/*17.9*/if(message.size()>0)/*17.29*/{_display_(Seq[Any](format.raw/*17.30*/("""
+								"""),_display_(/*18.10*/for( error <- message) yield /*18.32*/{_display_(Seq[Any](format.raw/*18.33*/("""
+									"""),format.raw/*19.10*/("""<p style="color:red;"> """),_display_(/*19.34*/error),format.raw/*19.39*/("""</p>
+								""")))}),format.raw/*20.10*/("""
+							""")))}),format.raw/*21.9*/("""
+						"""),format.raw/*22.7*/("""<button type="submit">投稿</button>
+					""")))}),format.raw/*23.7*/("""
+	            """),format.raw/*24.14*/("""</div>
 	        </div>
-	        <div></div>
+	        """),_display_(/*26.11*/tablePost(posts, "createNewPost", currentPage, maxPage)),format.raw/*26.66*/("""
 	
-	        <table class="table table-bordered table-striped" id="productTable">
-	            <thead>
-		            <tr>
-		                <th>Id</th>
-		                <th>投稿日</th>
-		                <th>記事一覧</th>
-		                <th>Action</th>
-		            </tr>
-	            </thead>
-	            <tbody>
-		            """),_display_(/*30.16*/for(post <- posts) yield /*30.34*/{_display_(Seq[Any](format.raw/*30.35*/("""
-			            """),format.raw/*31.16*/("""<tr id=""""),_display_(/*31.25*/post/*31.29*/.id),format.raw/*31.32*/("""">
-			                <td>"""),_display_(/*32.25*/post/*32.29*/.id),format.raw/*32.32*/("""</td>
-			                <td>"""),_display_(/*33.25*/post/*33.29*/.createDate),format.raw/*33.40*/("""</td>
-			                <td>
-			               	 	<a class="" href=""""),_display_(/*35.41*/routes/*35.47*/.PostController.viewPostDetail(post.id)),format.raw/*35.86*/("""">"""),_display_(/*35.89*/post/*35.93*/.title),format.raw/*35.99*/("""</a>
-			                </td>
-			                <td>
-			                	<a class="btn btn-danger" href="">削除</a>
-			                	<a class="btn btn-success" href="">編集</a>
-			                </td>
-			            </tr>　
-		            """)))}),format.raw/*42.16*/("""
-	            """),format.raw/*43.14*/("""</tbody>
-	        </table>
-	    </div>
+	    """),format.raw/*28.6*/("""</div>
 	</div>
-	<a class="#" href=""""),_display_(/*47.22*/routes/*47.28*/.PostController.showAllPost),format.raw/*47.55*/("""">All Post </a>
-""")))}),format.raw/*48.2*/("""
+	<a class="#" href=""""),_display_(/*30.22*/routes/*30.28*/.PostController.showAllPost(1)),format.raw/*30.58*/("""">All Post </a>
+""")))}),format.raw/*31.2*/("""
 """))
       }
     }
   }
 
-  def render(formPost:Form[models.Post],posts:List[models.Post],postTitle:String): play.twirl.api.HtmlFormat.Appendable = apply(formPost,posts,postTitle)
+  def render(formPost:Form[models.Post],posts:List[models.Post],message:List[String],currentPage:Int,maxPage:Int): play.twirl.api.HtmlFormat.Appendable = apply(formPost,posts,message,currentPage,maxPage)
 
-  def f:((Form[models.Post],List[models.Post],String) => play.twirl.api.HtmlFormat.Appendable) = (formPost,posts,postTitle) => apply(formPost,posts,postTitle)
+  def f:((Form[models.Post],List[models.Post],List[String],Int,Int) => play.twirl.api.HtmlFormat.Appendable) = (formPost,posts,message,currentPage,maxPage) => apply(formPost,posts,message,currentPage,maxPage)
 
   def ref: this.type = this
 
@@ -97,11 +79,11 @@ Seq[Any](format.raw/*1.77*/("""
 object createNewPost extends createNewPost_Scope0.createNewPost
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 28 10:58:38 JST 2016
-                  SOURCE: /Users/mac_thieu/feedpicks-identity/app/views/Post/createNewPost.scala.html
-                  HASH: eac66f9b343752f46c51bf3483c1b28c2b49d0c4
-                  MATRIX: 802->1|972->76|1000->79|1024->95|1063->97|1091->99|1240->223|1254->229|1331->298|1370->300|1403->308|1543->428|1577->435|1647->475|1689->489|2085->858|2119->876|2158->877|2202->893|2238->902|2251->906|2275->909|2329->936|2342->940|2366->943|2423->973|2436->977|2468->988|2565->1058|2580->1064|2640->1103|2670->1106|2683->1110|2710->1116|2980->1355|3022->1369|3117->1437|3132->1443|3180->1470|3227->1487
-                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|39->8|39->8|39->8|39->8|40->9|44->13|45->14|46->15|47->16|61->30|61->30|61->30|62->31|62->31|62->31|62->31|63->32|63->32|63->32|64->33|64->33|64->33|66->35|66->35|66->35|66->35|66->35|66->35|73->42|74->43|78->47|78->47|78->47|79->48
+                  DATE: Mon Dec 05 15:49:54 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks/app/views/Post/createNewPost.scala.html
+                  HASH: 40eddf4eb4e96c324fa43e825fdf1da7955dbb9d
+                  MATRIX: 816->1|1162->112|1190->256|1217->258|1241->274|1280->276|1308->278|1458->402|1473->408|1551->477|1591->479|1625->487|1765->607|1800->616|1829->636|1868->637|1905->647|1943->669|1982->670|2020->680|2071->704|2097->709|2142->723|2181->732|2215->739|2285->779|2327->793|2387->826|2463->881|2498->889|2561->925|2576->931|2627->961|2674->978
+                  LINES: 27->1|33->1|35->5|36->6|36->6|36->6|37->7|41->11|41->11|41->11|41->11|42->12|46->16|47->17|47->17|47->17|48->18|48->18|48->18|49->19|49->19|49->19|50->20|51->21|52->22|53->23|54->24|56->26|56->26|58->28|60->30|60->30|60->30|61->31
                   -- GENERATED --
               */
           

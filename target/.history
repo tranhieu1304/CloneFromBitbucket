@@ -1,0 +1,68 @@
+clean
+update
+compile
+run
+cd
+activator -jvm-debug 9999 run
+clean
+update
+compile
+-jvm-debug 9999
+jvm-debug 9999 run
+jvm-debug 9999
+activator -jvm-debug 9999 run
+cd
+update
+compile
+activator clean
+clean
+update
+compile
+run
+compile
+run
+clean
+update
+compile
+run
+update
+compile
+run
+clean
+update
+compile
+run
+compile
+clean
+conpile
+compile
+run
+compile
+jvm-debug 9999
+ls
+sl
+activator run
+help
+show
+last
+help
+session
+clean
+update
+compile
+cl
+l
+activator l
+clean
+update
+compile
+run
+clean
+update
+compile
+clean
+update
+compile
+clean
+compile
+run

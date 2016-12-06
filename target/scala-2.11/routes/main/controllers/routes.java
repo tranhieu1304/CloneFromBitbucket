@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/mac_thieu/feedpicks-identity/conf/routes
-// @DATE:Mon Nov 28 10:58:37 JST 2016
+// @SOURCE:/Users/mac_thieu/feedpicks/conf/routes
+// @DATE:Mon Dec 05 15:49:53 JST 2016
 
 package controllers;
 
@@ -11,6 +11,7 @@ public class routes {
   
   public static final controllers.ReverseAssets Assets = new controllers.ReverseAssets(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseUserController UserController = new controllers.ReverseUserController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseFavoriteController FavoriteController = new controllers.ReverseFavoriteController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseAuthController AuthController = new controllers.ReverseAuthController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReversePostController PostController = new controllers.ReversePostController(RoutesPrefix.byNamePrefix());
@@ -20,6 +21,7 @@ public class routes {
     
     public static final controllers.javascript.ReverseAssets Assets = new controllers.javascript.ReverseAssets(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseUserController UserController = new controllers.javascript.ReverseUserController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseFavoriteController FavoriteController = new controllers.javascript.ReverseFavoriteController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseAuthController AuthController = new controllers.javascript.ReverseAuthController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReversePostController PostController = new controllers.javascript.ReversePostController(RoutesPrefix.byNamePrefix());

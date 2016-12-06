@@ -46,11 +46,15 @@ Seq[Any](format.raw/*1.32*/("""
 	href=""""),_display_(/*15.9*/routes/*15.15*/.Assets.versioned("images/favicon.png")),format.raw/*15.54*/("""">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link rel="stylesheet"  href=""""),_display_(/*18.32*/routes/*18.38*/.Assets.versioned("stylesheets/post.css")),format.raw/*18.79*/("""">
+	
+	
+
 </head>
 <body>
-	<div class="header">"""),_display_(/*20.23*/common/*20.29*/.header()),format.raw/*20.38*/("""</div>
+	<div class="header">"""),_display_(/*24.23*/common/*24.29*/.header()),format.raw/*24.38*/("""</div>
 	<br><br><br>
-	<div class="container">"""),_display_(/*22.26*/content),format.raw/*22.33*/("""</div>
+	<div class="container">"""),_display_(/*26.26*/content),format.raw/*26.33*/("""</div>
 </body>
 </html>"""))
       }
@@ -72,11 +76,11 @@ Seq[Any](format.raw/*1.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Mon Nov 28 10:58:38 JST 2016
-                  SOURCE: /Users/mac_thieu/feedpicks-identity/app/views/main.scala.html
-                  HASH: 4180975590a2ec4b0308d0e5cc0d66442eac4a44
-                  MATRIX: 748->1|873->31|901->33|974->81|999->86|1400->460|1415->466|1477->507|1557->561|1572->567|1632->606|1789->736|1804->742|1834->751|1907->797|1935->804
-                  LINES: 27->1|32->1|34->3|37->6|37->6|44->13|44->13|44->13|46->15|46->15|46->15|51->20|51->20|51->20|53->22|53->22
+                  DATE: Mon Dec 05 15:49:54 JST 2016
+                  SOURCE: /Users/mac_thieu/feedpicks/app/views/main.scala.html
+                  HASH: 26815a7794f4f7450a1a8331676d946ccd40e502
+                  MATRIX: 748->1|873->31|901->33|974->81|999->86|1400->460|1415->466|1477->507|1557->561|1572->567|1632->606|1783->730|1798->736|1860->777|1932->822|1947->828|1977->837|2050->883|2078->890
+                  LINES: 27->1|32->1|34->3|37->6|37->6|44->13|44->13|44->13|46->15|46->15|46->15|49->18|49->18|49->18|55->24|55->24|55->24|57->26|57->26
                   -- GENERATED --
               */
           

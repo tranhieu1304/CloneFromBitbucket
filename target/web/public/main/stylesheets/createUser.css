@@ -1,0 +1,26 @@
+form { margin: 10px 10px; }
+
+h2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left : 5px;
+  text-align : center;
+  color
+}
+
+.container { max-width: 360px; }
+
+.divider {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.divider hr {
+  margin: 7px 10px;
+  width: 35%;
+}
+
+.left { float: left; }
+
+.right { float: right; }

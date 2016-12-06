@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/mac_thieu/feedpicks-identity/conf/routes
-// @DATE:Mon Nov 28 10:58:37 JST 2016
+// @SOURCE:/Users/mac_thieu/feedpicks/conf/routes
+// @DATE:Mon Dec 05 15:49:53 JST 2016
 
 
 package router {
