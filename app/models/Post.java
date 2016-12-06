@@ -17,7 +17,10 @@ import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 import com.avaje.ebean.Model;
+import com.avaje.ebean.PagedList;
 import com.avaje.ebean.annotation.CreatedTimestamp;
+
+import constants.Constant;
 
 @Entity
 @Table(name = "post", uniqueConstraints = { @UniqueConstraint(columnNames = { "url" }) })
@@ -31,7 +34,7 @@ public class Post extends Model {
 
 	@Column(name = "title", length = 255)
 	public String title;
-	
+
 	@Column(name = "imgUrl", length = 255)
 	public String imgUrl;
 
@@ -62,25 +65,48 @@ public class Post extends Model {
 
 	private static Finder<Long, Post> find = new Finder<>(Post.class);
 
-	public static List<Post> findAll() {
-		return find.where().eq("isDelete", false).findList();
+	private static int pageSize = Constant.PAGINATION_PAGE_SIZE;
+
+	public static PagedList<Post> findAll(int page) {
+
+		int pageIndex = page - 1;
+		PagedList<Post> pagedList = find.where().eq("isDelete", false).findPagedList(pageIndex, pageSize);
+		return pagedList;
 	}
 
-	public static List<Post> findByUser(User user) {
-		return find.where().like("isDelete", "0").in("user", user).findList();
+	public static PagedList<Post> findByUser(User user, int page) {
+		int pageIndex = page - 1;
+		PagedList<Post> pagedList = find.where().like("isDelete", "0").in("user", user).findPagedList(pageIndex,
+				pageSize);
+		return pagedList;
 	}
 
 	public static Post findById(Long id) {
 		return find.where().eq("id", id).findUnique();
 	}
 
-	public static List<Post> findTitle(String keyword) {
-		return find.where().like("title", "%" + keyword + "%").findList();
+	public static PagedList<Post> findTitle(String keyword, int page) {
+		int pageIndex = page - 1;
+		PagedList<Post> pagedList = find.where().like("title", "%" + keyword + "%").findPagedList(pageIndex, pageSize);
+		return pagedList;
 	}
 
 	public static List<Post> findByUrl(String url) {
-		return find.where().like("url", "%" + url.trim() + "%").findList();
+		List<Post> pagedList = find.where().like("url", "%" + url.trim() + "%").findList();
+		return pagedList;
 	}
+
+	public static Post findByPostIdCommentStatus(Long postId) {
+		Post post = find.select("*")
+						.fetch("comments")
+						.where()
+						.eq("comments.isDelete", true)
+						.eq("id", postId)
+						.setMaxRows(1)
+						.findUnique();
+		return post;
+	}
+
 
 	public void save() {
 		if (this.createDate == null) {
@@ -99,5 +125,11 @@ public class Post extends Model {
 	public void deletePost() {
 		this.isDelete = true;
 		super.update();
+	}
+
+	public static PagedList<Post> getPageList(int page) {
+		int pageIndex = page - 1;
+		PagedList<Post> pagedList = find.where().like("isDelete", "0").findPagedList(pageIndex, pageSize);
+		return pagedList;
 	}
 }

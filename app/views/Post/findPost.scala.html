@@ -1,4 +1,4 @@
-@(posts: List[models.Post], form: Form[controllers.PostController.FindForm])
+@(posts: List[models.Post], form: Form[controllers.PostController.FindForm], currentPage: Int, maxPage: Int)
 
 @import java.lang.String;  var username = "";var favoriteStatus = true;
 @import java.lang.Long; var favoriteId = -1l; var countFavorite = 0l;
@@ -9,12 +9,12 @@
 	        <div class="form-inline">
 	            <div class="input-group col-sm-6">
 	                  <label>
-	                      <a class="btn btn-success" href="@routes.PostController.addPost">投稿</a>
+	                      <a class="btn btn-success" href="@routes.PostController.addPost(1)">投稿</a>
 	                  </label>
 	                  <div>
 	                      <h3>検索</h3>
 	                      
-	                      @helper.form(action = routes.PostController.findPost(), 'method -> "GET") {
+	                      @helper.form(action = routes.PostController.findPost(1), 'method -> "GET") {
 	                      	@(helper.inputText(
 	                      		field = form("keyword"),
 	                      		'_label -> "",
@@ -27,53 +27,7 @@
 	            </div>
 	        </div>
 	        <div></div>
-	
-	        <table class="table table-filter" id="productTable">
-	            <thead>
-		            <tr  class="postList">
-		                <th>お気に入り</th>
-		                <th>投稿日</th>
-		                <th>画像</th>
-		                <th>投稿者</th>
-		                <th>記事一覧</th>
-		                <th>遷移</th>
-		            </tr>
-	            </thead>
-	            <tbody>
-		            @for(post <- posts){
-		            	@{countFavorite=0}
-		            	@{favoriteId = -1}
-			            @for(favorite <-post.favorites){
-			            	@if(favorite.user !=null){
-				            	@if(favorite.user.email == session.get("email")){
-				            			@{favoriteId = favorite.id}
-				            			@(favoriteStatus = favorite.isDelete)
-				            	} 
-				            	@if(favorite.isDelete == false){
-				            		@{countFavorite += 1}
-				            	}
-				            }
-					      }
-			            <tr id="@post.id" class="postList">
-			                <td>
-								<a  href="#" class="star" data-like="0"> @countFavorite </a>
-			                </td>
-			                <td>@post.createDate.format("dd/MM/yyyy")</td>
-			                <td class="image">
-			                	<img alt="" src="@post.imgUrl">
-			                </td>
-			                <td>@post.user.name</td>
-			                <td>
-			                	<a class="" href="@routes.PostController.viewPostDetail(post.id)">@post.title</a>	
-			                </td>
-			                <td>
-								<a class="btn btn-danger" href="">削除</a>
-			                	<a class="btn btn-success" href="">編集</a>
-							</td>
-			            </tr>　
-		            }
-	            </tbody>
-	        </table>
+			 @tablePost(posts, "findPost", currentPage, maxPage)
 	    </div>
 	</div>
 }

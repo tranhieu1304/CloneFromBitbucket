@@ -13,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -65,6 +66,10 @@ public class User extends Model {
 
 	@Column(name = "isDelete")
 	public boolean isDelete = false;
+	
+	@Lob
+	@Column(name = "imageContent")
+	public byte[] imageContent;
 
 	// Relationship
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")

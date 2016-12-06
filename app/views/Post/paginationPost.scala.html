@@ -1,0 +1,56 @@
+@(pageName: String,currentPage: Integer, maxPage: Integer )
+<link rel="stylesheet"  href="@routes.Assets.versioned("stylesheets/pagination.css")">
+<div class ="pagination-container text-center">
+  <ul class="pagination">
+        @if(currentPage == 1) {
+            <li class="disabled"><span>&larr;</span></li>
+        } else {
+            <li>
+            	 @if(pageName == "showAllPost"){
+	               		<a href="@controllers.routes.PostController.showAllPost(currentPage - 1)"> &larr;</a>
+	               }
+				@if( pageName == "createNewPost"){
+		               	<a href="@controllers.routes.PostController.addPost(currentPage - 1)"> &larr;</a>
+	               }
+               @if( pageName == "findPost"){
+	               		<a href="@controllers.routes.PostController.findPost(currentPage - 1)"> &larr;</a>
+               	  }
+            	
+            </li>
+        }
+
+        @for(index <- 1 to maxPage) {
+            @if(currentPage == index) {
+                <li class="disabled"><span>@index</span></li>
+            } else {
+            	<li>
+	             @if(pageName == "showAllPost"){
+		               		<a href="@controllers.routes.PostController.showAllPost(index)"> @index</a>
+		               }
+				@if( pageName == "createNewPost"){
+		               	<a href="@controllers.routes.PostController.addPost(index)"> @index</a>
+	               }
+	              @if( pageName == "findPost"){
+	               		<a href="@controllers.routes.PostController.findPost(index)"> @index</a>
+	              	  }
+	          </li>
+            }
+        }
+
+        @if(currentPage == maxPage) {
+            <li class="disabled"><span>&rarr;</span></li>
+        } else {
+            <li>
+             	@if(pageName == "showAllPost"){
+	               		<a href="@controllers.routes.PostController.showAllPost(currentPage + 1)"> &rarr;</a>
+	               }
+				@if( pageName == "createNewPost"){
+		               	<a href="@controllers.routes.PostController.addPost(currentPage + 1)"> &rarr;</a>
+	               }
+               @if( pageName == "findPost"){
+	               		<a href="@controllers.routes.PostController.findPost(currentPage + 1)"> &rarr;</a>
+               	  }
+            </li>
+        }
+    </ul>
+</div>

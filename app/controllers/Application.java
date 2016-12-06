@@ -19,8 +19,7 @@ public class Application extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-//    	return redirect(routes.PostController.showAllPost().url());
-    	return redirect(routes.PostController.showAllPost().url());
+    	return redirect(routes.PostController.showAllPost(1).url());
     }
 
 }

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.avaje.ebean.PagedList;
 import com.google.inject.Inject;
 
 import helpers.Secured;
@@ -31,26 +32,34 @@ public class PostController extends Controller {
 	@Inject
 	FormFactory formFactory;
 
-	public Result showAllPost() {
-		List<Post> posts = Post.findAll();
-		return ok(views.html.Post.showPostList.render(posts));
+	public Result showAllPost(int page) {
+		PagedList<Post> pageList = Post.getPageList(page);
+		List<Post> posts = pageList.getList();
+		int maxPage = pageList.getTotalPageCount();
+		// FOr test
+
+		return ok(views.html.Post.showPostList.render(posts, page, maxPage));
 	}
 
-	public Result addPost() {
+	public Result addPost(int page) {
 		Http.Request request = Http.Context.current().request();
 		String userName = request.username();
 		User user = User.findByEmail(userName);
 		Form<Post> form = formFactory.form(Post.class);
-		List<Post> posts = Post.findByUser(user);
-		return ok(views.html.Post.createNewPost.render(form, posts, new ArrayList<String>()));
+		PagedList<Post> pageList = Post.findByUser(user, page);
+		int maxPage = pageList.getTotalPageCount();
+		List<Post> posts = pageList.getList();
+		return ok(views.html.Post.createNewPost.render(form, posts, new ArrayList<String>(), page, maxPage));
 	}
 
-	public Result createPost() {
+	public Result createPost(int page) {
 		// This request send one more time to server >>> let fix it
 		Http.Request request = Http.Context.current().request();
 		String userName = request.username();
 		User user = User.findByEmail(userName);
-		List<Post> posts = Post.findByUser(user);
+		PagedList<Post> pageList = Post.findByUser(user, 1);
+		int maxPage = pageList.getTotalPageCount();
+
 		Form<Post> form = formFactory.form(Post.class).bindFromRequest();
 		Post post = new Post();
 		if (!form.hasErrors()) {
@@ -74,12 +83,13 @@ public class PostController extends Controller {
 			if (post.messageError.isEmpty()) {
 				post.save();
 				form = formFactory.form(Post.class);
-				posts = Post.findByUser(user);
+
 			}
 		} else {
 			return badRequest("Have some error");
 		}
-		return ok(views.html.Post.createNewPost.render(form, posts, post.messageError));
+		List<Post> posts = pageList.getList();
+		return ok(views.html.Post.createNewPost.render(form, posts, post.messageError, page, maxPage));
 	}
 
 	public Result viewPostDetail(Long postId) {
@@ -96,19 +106,23 @@ public class PostController extends Controller {
 			return true;
 	}
 
-	public Result findPost() {
+	public Result findPost(int page) {
 		Form<FindForm> form = formFactory.form(FindForm.class).bindFromRequest();
+		PagedList<Post> pageList;
+		int maxPage = 0;
 		List<Post> posts = new ArrayList<>();
 
 		if (!form.hasErrors()) {
 			String keyword = form.get().keyword;
 			if ("".equals(keyword) || keyword == null) {
-				posts = Post.findAll();
+				pageList = Post.findAll(page);
 			} else {
-				posts = Post.findTitle(keyword);
+				pageList = Post.findTitle(keyword, page);
 			}
+			posts = pageList.getList();
+			maxPage = pageList.getTotalPageCount();
 		}
-		return ok(views.html.Post.findPost.render(posts, form));
+		return ok(views.html.Post.findPost.render(posts, form, page, maxPage));
 	}
 
 	public static class FindForm {
