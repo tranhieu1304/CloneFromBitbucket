@@ -5,11 +5,13 @@
 	 <div id="navbar" class="navbar-collapse collapse">
 	      <ul class="nav navbar-nav">
 	        @if(models.User.isLogin) {
-	          <li><a href="@routes.UserController.editUser(models.User.email)">@session.get("username")</a></li>
+	          <li class="userHeader" value = "@session.get("email")" ><a href="@routes.UserController.editUser(models.User.email)">@session.get("username")</a></li>
 	          <li><a href="@routes.AuthController.logout()">ログアウト</a></li>
 	        }else{
 	          <li><a href="@routes.AuthController.login()">ログイン</a></li>
 	        }
+	         <li><a href="@routes.ChatController.wsChannel">Chat</a></li>
 	      </ul>
+	     
 	  </div>
 </nav>

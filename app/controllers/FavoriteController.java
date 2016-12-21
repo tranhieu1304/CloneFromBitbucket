@@ -8,6 +8,7 @@ import models.Favorite;
 import models.Post;
 import models.User;
 import play.data.DynamicForm;
+import play.data.Form;
 import play.data.FormFactory;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -23,6 +24,8 @@ public class FavoriteController extends Controller {
 		User user = User.findByEmail(userName);
 
 		DynamicForm form = formfactory.form().bindFromRequest();
+		Form<User> userForm = formfactory.form(User.class).bindFromRequest();
+		DynamicForm dyForm = DynamicForm.form().bindFromRequest();
 		ObjectNode result = Json.newObject();
 		if (!form.hasErrors()) {
 			try {

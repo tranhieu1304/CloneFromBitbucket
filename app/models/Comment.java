@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -37,11 +38,12 @@ public class Comment extends Model {
 	@Column(name = "isDelete")
 	public boolean isDelete = false;
 
+	private static Find<Long, Comment> find = new Finder<Long, Comment>(Comment.class);
 	// Relationship
 	@ManyToOne(cascade = CascadeType.ALL)
 	public User user;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	public Post post;
 
 	public void save() {

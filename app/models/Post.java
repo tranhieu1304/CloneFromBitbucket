@@ -73,6 +73,9 @@ public class Post extends Model {
 		PagedList<Post> pagedList = find.where().eq("isDelete", false).findPagedList(pageIndex, pageSize);
 		return pagedList;
 	}
+	public static List<Post> findAll() {
+		return  find.where().eq("isDelete", false).findList();
+	}
 
 	public static PagedList<Post> findByUser(User user, int page) {
 		int pageIndex = page - 1;
@@ -97,12 +100,11 @@ public class Post extends Model {
 	}
 
 	public static Post findByPostIdCommentStatus(Long postId) {
-		Post post = find.select("*")
+		Post post = find
 						.fetch("comments")
 						.where()
-						.eq("comments.isDelete", true)
 						.eq("id", postId)
-						.setMaxRows(1)
+						.eq("comments.isDelete", false)
 						.findUnique();
 		return post;
 	}
@@ -131,5 +133,11 @@ public class Post extends Model {
 		int pageIndex = page - 1;
 		PagedList<Post> pagedList = find.where().like("isDelete", "0").findPagedList(pageIndex, pageSize);
 		return pagedList;
+	}
+	public String validate()  {
+		String temp = "why auto pass here";
+		if(temp != "")
+			return "musukashi";
+		return null;
 	}
 }

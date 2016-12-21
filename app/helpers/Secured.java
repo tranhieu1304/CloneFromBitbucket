@@ -19,5 +19,4 @@ public class Secured extends Security.Authenticator {
         ctx.session().put(Constant.SESSION_RETURN_URL, returnUrl);
         return redirect(routes.AuthController.login());
     }
-
 }

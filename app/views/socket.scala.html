@@ -1,0 +1,94 @@
+
+@main("Chat room using WebSocket"){
+     <div style="width:100%;">
+        <input type="text" id="message-area" style="width:400px;padding:10px;margin:5px;float:left;" placeholder="Enter message" onkeydown="sendMessageonEnter(event)" />
+        <input type="button" id="send-btn" onclick="sendMessage()" style="width:50px;padding:5px 10px;margin:10px;float:left;" value="Send" text="Send">       
+     </div>
+      <div id="output" style="clear:both;"></div>  
+}
+
+
+    <script language="javascript" type="text/javascript">
+
+   var wsUri = "ws://localhost:9000/socketKame"; 
+
+    var output;
+    var kameWebsocket;
+    /* var userName = @session.get("username"); */
+
+    function init()
+    {
+      output = document.getElementById("output");
+      testWebSocket();
+    }
+
+    function testWebSocket()
+    {
+  
+      kameWebsocket = new WebSocket(wsUri);
+      kameWebsocket.onopen = function(evt) { onOpen(evt) };
+      kameWebsocket.onclose = function(evt) { onClose(evt) };
+      kameWebsocket.onmessage = function(evt) { onMessage(evt) };
+      kameWebsocket.onerror = function(evt) { onError(evt) };
+    }
+
+    function onOpen(evt)
+    {
+      writeToScreen("CONNECTED Kame");
+      doSend("WebSocket rocks Kame");
+    }
+
+    function onClose(evt)
+    {
+      writeToScreen("DISCONNECTED Kame");
+    }
+
+    function onMessage(evt)
+    {
+      writeToScreen('<span style="color: blue;"> RESPONE : '  + evt.data+'</span>');
+      //websocket.close();
+    }
+
+    function onError(evt)
+    {
+      writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+    }
+    // Enter de gui tin nhan
+    function sendMessageonEnter(event) {
+      
+      if(event.which == 13 || event.keyCode == 13){
+          sendMessage();
+      }
+      else{
+          return false; // returning false will prevent the event fraom bubbling up.
+      }
+    }
+
+    function sendMessage()
+    {
+      var messageOb=document.getElementById('message-area');
+      var message= messageOb.value;
+      writeToScreen("SENT: " + message);
+      kameWebsocket.send(message);
+      kameWebsocket.
+      messageOb.value='';
+      messageOb.focus();
+    }
+
+    function doSend(message)
+    {
+      writeToScreen("SENT: " + message);
+      kameWebsocket.send(message);
+    }
+
+    function writeToScreen(message)
+    {
+      var pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = message;
+      output.appendChild(pre);
+    }
+
+    window.addEventListener("load", init, false);
+
+    </script>

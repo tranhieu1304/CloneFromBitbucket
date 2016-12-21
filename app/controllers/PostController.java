@@ -34,9 +34,12 @@ public class PostController extends Controller {
 
 	public Result showAllPost(int page) {
 		PagedList<Post> pageList = Post.getPageList(page);
+		@SuppressWarnings("unused")
+		Http.Request request = Http.Context.current().request();
 		List<Post> posts = pageList.getList();
 		int maxPage = pageList.getTotalPageCount();
 		// FOr test
+		Post.findByPostIdCommentStatus(1l);
 
 		return ok(views.html.Post.showPostList.render(posts, page, maxPage));
 	}

@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.Optional;
+
 import com.google.inject.Inject;
 
 import constants.Constant;
@@ -9,6 +11,7 @@ import models.User;
 import play.data.Form;
 import play.data.FormFactory;
 import play.filters.csrf.AddCSRFToken;
+import play.filters.csrf.CSRF.Token;
 import play.filters.csrf.RequireCSRFCheck;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -21,13 +24,16 @@ public class AuthController extends Controller {
 	@AddCSRFToken
 	public Result login() {
 		Form<LoginForm> f = formFactory.form(LoginForm.class);
+		@SuppressWarnings("unused")
+		Optional<Token> tem = play.filters.csrf.CSRF.getToken(request());
 		return ok(views.html.Author.login.render(f));
 	}
 	@AddCSRFToken
 	@RequireCSRFCheck
 	public Result auth() {
 		Form<LoginForm> f = formFactory.form(LoginForm.class).bindFromRequest();
-
+		@SuppressWarnings("unused")
+		Optional<Token> tem = play.filters.csrf.CSRF.getToken(request());
 		if (f.hasErrors()) {
 			System.out.println(f.errors().toString());
 			return badRequest(views.html.Author.login.render(f));

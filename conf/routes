@@ -3,21 +3,21 @@
 GET     /                           	controllers.Application.index
 
 #For Post--------------------------------------------------------------------
-GET     /listPost/index                 controllers.PostController.showAllPost(page: Integer = 1)
-GET     /listPost/index/:page           controllers.PostController.showAllPost(page: Integer)
-POST    /listPost/like                  controllers.FavoriteController.favoriedPost
-GET    /addPost							controllers.PostController.addPost(page : Integer = 1)
-GET    /addPost/index/:page				controllers.PostController.addPost(page : Integer)
-POST   /createPost						controllers.PostController.createPost(page : Integer = 1)
-GET   /find/							controllers.PostController.findPost(page : Integer = 1)
-GET   /find/index/:page					controllers.PostController.findPost(page : Integer)
-GET   /detailPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
+GET     /listPost/index                 	controllers.PostController.showAllPost(page: Integer = 1)
+GET     /listPost/index/:page           	controllers.PostController.showAllPost(page: Integer)
+POST    /listPost/like                  	controllers.FavoriteController.favoriedPost
+GET    /addPost								controllers.PostController.addPost(page : Integer = 1)
+GET    /addPost/index/:page					controllers.PostController.addPost(page : Integer)
+POST   /createPost							controllers.PostController.createPost(page : Integer = 1)
+GET   /find/								controllers.PostController.findPost(page : Integer = 1)
+GET   /find/index/:page						controllers.PostController.findPost(page : Integer)
+GET   /detailPost/:postId					controllers.PostController.viewPostDetail(postId : Long)
 
 #For Pagging-------------------------------------------------------------
 
 
 #For Comment--------------------------------------------------------------------
-GET   /addComment/:postId               controllers.CommentController.createComment(postId : Long)
+GET   /addComment/:postId               	controllers.CommentController.createComment(postId : Long)
 
 
 #For User--------------------------------------------------------------------
@@ -28,9 +28,20 @@ POST    /update/                            controllers.UserController.update
 
 
 #For Authenticate-------------------------------------------------------------
-GET     /login                          controllers.AuthController.login
-POST    /auth                           controllers.AuthController.auth
-GET     /logout                         controllers.AuthController.logout
+GET     /login                          	controllers.AuthController.login
+POST    /auth                           	controllers.AuthController.auth
+GET     /logout                         	controllers.AuthController.logout
+
+# WebSocket -----------------------------------------------------------------
+GET     /ws									@controllers.ChatController.ws()
+GET     /message							@controllers.ChatController.wsChannel()
+GET     /socketKame							@controllers.ChatController.socket()
+GET     /message/:channel					@controllers.ChatController.channel(channel)
+
+# API -----------------------------------------------------------------
+GET     /kame/post/:id						@controllers.api.PostAPI.getPost(id: Long)
+GET     /kame/postList/list						@controllers.api.PostAPI.getAllPost()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

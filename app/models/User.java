@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -22,6 +23,8 @@ import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 
 import constants.Constant;
+import models.chat.ChatRoom;
+import models.chat.UserMessage;
 import play.data.validation.Constraints;
 import play.mvc.Http;
 
@@ -80,6 +83,12 @@ public class User extends Model {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	public List<Favorite> favorites;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	public List<UserMessage> usermessage;
+	
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
+	public List<ChatRoom> chatrooms;
 
 	private static Finder<Long, User> find = new Finder<>(User.class);
 
@@ -165,5 +174,11 @@ public class User extends Model {
 
 	public static List<User> findAll() {
 		return find.findList();
+	}
+	public String validate()  {
+		String temp = "why auto pass here";
+		if(temp != "")
+			return "musukashi";
+		return null;
 	}
 }
