@@ -137,7 +137,7 @@ public class Post extends Model {
 	public String validate()  {
 		String temp = "why auto pass here";
 		if(temp != "")
-			return "musukashi";
+			return "muzukashi";
 		return null;
 	}
 }

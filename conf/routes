@@ -39,8 +39,9 @@ GET     /socketKame							@controllers.ChatController.socket()
 GET     /message/:channel					@controllers.ChatController.channel(channel)
 
 # API -----------------------------------------------------------------
-GET     /kame/post/:id						@controllers.api.PostAPI.getPost(id: Long)
-GET     /kame/postList/list						@controllers.api.PostAPI.getAllPost()
+GET     /kameApi/post/authentication/:user/:pass		@controllers.api.PostAPI.authentiaton(user: String, pass: String)
+GET     /kameApi/post/:id								@controllers.api.PostAPI.getPost(id: Long)
+GET     /kameApi/postList/list/:token					@controllers.api.PostAPI.getAllPost(token: String)
 
 
 # Map static resources from the /public folder to the /assets URL path

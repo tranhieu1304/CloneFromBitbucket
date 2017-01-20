@@ -7,12 +7,8 @@ GET     /listPost                       controllers.PostController.showAllPost
 POST    /listPost/like                  controllers.FavoriteController.favoriedPost
 GET    /addPost							controllers.PostController.addPost
 POST   /createPost						controllers.PostController.createPost
-<<<<<<< HEAD
 GET   /detailPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
-=======
-GET   /createPost/:postId				controllers.PostController.viewPostDetail(postId : Long)
 GET		/find							controllers.PostController.findPost
->>>>>>> 7541fac910ba7defb78d28d1b158437b74337fc3
 
 #For Comment--------------------------------------------------------------------
 GET   /addComment/:postId               controllers.CommentController.createComment(postId : Long)
@@ -26,6 +22,9 @@ POST    /create                         controllers.UserController.create
 GET     /login                          controllers.AuthController.login
 POST    /auth                           controllers.AuthController.auth
 GET     /logout                         controllers.AuthController.logout
+
+
+GET     /datatable                           controllers.datatable.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
